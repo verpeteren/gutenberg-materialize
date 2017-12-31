@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+
+{% endblock sidebar %}
+
+{% block meta %}
+	<meta name="description" content="{{ config.description }}">
+	<meta property="og:title" content="{{ config.title }}">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="{{ config.extra.paralax.logo }}">
+	<meta property="og:url" content="{{ get_url(path="/") }}">
+	<meta property="og:description" content="{{ config.description }}">
+	<meta property="og:site_name" content="{{ config.title }}">
+{% endblock meta %}
+{% block main %}
+	<div id="index-banner" class="parallax-container">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<br>
+				<br>
+				{% if config.extra.paralax.index.images.one.title %}
+					<h1 class="header center {{ config.extra.paralax.colorscheme.font.one }}-text text-lighten-2">{{ config.extra.paralax.index.images.one.title }}</h1>
+				{% endif %}
+				{% if config.extra.paralax.index.images.one.subtitle %}
+					<div class="row center">
+						<h5 class="header col s12 light">{{ config.extra.paralax.index.images.one.subtitle }}</h5>
+					</div>
+				{% endif %}
+				{% if config.extra.paralax.index.images.one.cta %}
+					<div class="row center">
+						<a href="{{ config.extra.paralax.index.images.one.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ config.extra.paralax.colorscheme.font.one  }} lighten-1">{{ config.extra.paralax.index.images.one.cta.name }}</a>
+					</div>
+				{% endif %}
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="parallax">
+			<img src="/img/{{ config.extra.paralax.index.images.one.file }}" alt="{{ config.extra.paralax.index.images.one.alt }}">
+		</div>
+	</div>
+	<div class="container">
+		<div class="section {{ config.extra.paralax.colorscheme.font.three }}">
+			<div class="row">
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<h2 class="center {{ config.extra.paralax.colorscheme.font.two }}-text"><i class="material-icons">{{ config.extra.paralax.index.features.one.icon }}</i></h2>
+						<h5 class="center">{{ config.extra.paralax.index.features.one.title }}</h5>
+						<p class="light">{{ config.extra.paralax.index.features.one.text }}</p>
+					</div>
+				</div>
+
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<h2 class="center {{ config.extra.paralax.colorscheme.font.two }}-text"><i class="material-icons">{{ config.extra.paralax.index.features.two.icon }}</i></h2>
+						<h5 class="center">{{ config.extra.paralax.index.features.two.title }}</h5>
+						<p class="light">{{ config.extra.paralax.index.features.two.text }}</p>
+					</div>
+				</div>
+
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<h2 class="center {{ config.extra.paralax.colorscheme.font.two }}-text"><i class="material-icons">{{ config.extra.paralax.index.features.three.icon }}</i></h2>
+						<h5 class="center">{{ config.extra.paralax.index.features.three.title }}</h5>
+						<p class="light">{{ config.extra.paralax.index.features.three.text }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="parallax-container valign-wrapper">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+					{% if config.extra.paralax.index.images.two.title %}
+						<h1 class="header center {{ config.extra.paralax.colorscheme.font.one  }}-text text-lighten-2">{{ config.extra.paralax.index.images.two.title }}</h1>
+					{% endif %}
+					{% if config.extra.paralax.index.images.two.subtitle %}
+						<div class="row center">
+							<h5 class="header col s12 light">{{ config.extra.paralax.index.images.two.subtitle }}</h5>
+						</div>
+					{% endif %}
+				</div>
+				{% if config.extra.paralax.index.images.two.cta %}
+					<div class="row center">
+						<a href="{{ config.extra.paralax.index.images.two.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ config.extra.paralax.colorscheme.font.one }} lighten-1">{{ config.extra.paralax.index.images.two.cta.name }}</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="parallax">
+			<img src="/img/{{ config.extra.paralax.index.images.two.file }}" alt="{{ config.extra.paralax.index.images.two.alt }}">
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="section {{ config.extra.paralax.colorscheme.font.three }}">
+			<div class="row">
+				<div class="col s12 center">
+					<h3><i class="mdi-content-send {{ config.extra.paralax.colorscheme.font.two }}-text"></i></h3>
+						<p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="parallax-container valign-wrapper">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+					{% if config.extra.paralax.index.images.three.title %}
+						<h1 class="header center {{ config.extra.paralax.colorscheme.font.one }}-text text-lighten-2">{{ config.extra.paralax.index.images.three.title }}</h1>
+					{% endif %}
+					{% if config.extra.paralax.index.images.three.subtitle %}
+						<div class="row center">
+							<h5 class="header col s12 light">{{ config.extra.paralax.index.images.three.subtitle }}</h5>
+						</div>
+					{% endif %}
+				</div>
+				{% if config.extra.paralax.index.images.three.cta %}
+					<div class="row center">
+						<a href="{{ config.extra.paralax.index.images.three.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ config.extra.paralax.colorscheme.font.one }} lighten-1">{{ config.extra.paralax.index.images.three.cta.name }}</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="parallax">
+			<img src="/img/{{ config.extra.paralax.index.images.three.file }}" alt="{{ config.extra.paralax.index.images.three.alt }}">
+		</div>
+	</div>
+{% endblock main %}

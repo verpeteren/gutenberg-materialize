@@ -1,0 +1,139 @@
+name = "paralax"
+description = "A straight forward materialized landing theme"
+license = "MIT"
+homepage = "https://github.com/verpeteren/gutenberg-paralax"
+min_version = "0.2"
+
+[extra]
+
+[author]
+name = "Peter Reijnders"
+homepage = "https://verpeteren.nl"
+
+[original]
+author =  "Paralax"
+homepage = "http://materializecss.com/"
+repo = "https://github.com/Dogfalo/materialize/"
+
+[extra.paralax]
+logo = "http://placehold.it/300x300"
+links = [
+    {url = "/", name = "Home"},
+    {url = "/blog", name = "Blog"},
+]
+[extra.paralax.colorscheme]
+font = {one = "teal", two="brown", three = "white"}
+
+[extra.paralax.footer]
+
+[extra.paralax.footer.bio]
+title = "Company Bio"
+description = "Bla bla bla bla bla. Rubarb Rubarb, Rubarb. Yada yada yada. Bla!"
+
+[extra.paralax.footer.references]
+title = "References"
+list = [
+    {url = "http://example.com", name="example 1"},
+    {url = "http://example.com", name="example 2"},
+]
+
+[extra.paralax.footer.contact]
+title = "Contact"
+list = [
+    {url = "mailto://me@example.com", name="mail"},
+    {url = "tel://003123456789", name="phone"}
+]
+
+[extra.paralax.social]
+
+ga = "UA-12345678-9"
+discuss = "verpeteren"
+
+facebook = "verpeteren"
+livejournal = "verpeteren"
+twitter = "verpeteren"
+reddit = "u/verpeteren"
+googleplus = "123456789012345678901"
+
+hackernews = "verpeteren"
+slashdot = "verpeteren"
+myspace = "verpeteren"
+tumblr = "verpeteren"
+medium = "verpeteren"
+
+skype = "verpeteren"
+slack = "verpeteren"
+whatsapp = "0031623456789"
+viber = "verpeteren/%2B/en"
+wikipedia = "verpeteren"
+
+pinterest = "verpeteren"
+pinboard = "verpeteren"
+dribble = "verpeteren"
+flickr = "16832534@N03"
+instagram = "verpeteren"
+
+songkick = "1234567-ver-peteren"
+bandcamp = "verpeteren"
+soundcloud = "verpeteren"
+lastfm = "Ver-Peteren"
+
+github = "verpeteren"
+gitlab = "verpeteren"
+bitbucket = "verpeteren"
+stackoverflow = "1234567/verpeteren"
+
+deviantart = "verpeteren"
+shadertoy = "verpeteren"
+
+youtube = "DJtJKMICpb9B1qf7qjEOA"
+periscope = "1gqxvYRvnBgJB"
+vimeo = "verpeteren"
+
+email = "peter.reijnders@verpeteren.nl"
+linkedin = "peter-reijnders-83634149"
+xing = "peter_reijnders123"
+meetup = "A-Meetup-Group"
+justgiving = "verpeteren"
+
+[extra.paralax.index]
+
+[extra.paralax.index.images]
+
+[extra.paralax.index.images.one]
+file = "background1.jpg"
+alt = "Design thingking by Patrick Perkins"
+title = "gutenberg paralax template"
+subtitle = "Modern opionated responsive front-end framework Material Design static templates"
+cta = { url = "/blog", name = "get started" }
+
+[extra.paralax.index.images.two]
+file = "background2.jpg"
+alt = "Brainstorming over paper by Helloquence"
+title = "materialize"
+subtitle = "A modern responsive front-end framework based on Material Design"
+cta = { url = "materializecss.com", name = "Get Materialize" }
+
+[extra.paralax.index.images.three]
+file = "background3.jpg"
+alt = "Shot before the shoot by Nik MacMillan"
+title = "gutenberg"
+subtitle = "An opinionated static site generator with everything built-in"
+cta = { url = "getguterberg.io", name = "Get Gutenberg" }
+
+[extra.paralax.index.features]
+[extra.paralax.index.features.one]
+icon = "flash_on"
+title ="Reason one"
+text = "Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla."
+
+[extra.paralax.index.features.two]
+icon = "group"
+title = "Reason two"
+text = "Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb." 
+
+[extra.paralax.index.features.three]
+icon =  "settings"
+title =  "Reason three"
+text = "Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada."
+	

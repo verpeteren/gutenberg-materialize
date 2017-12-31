@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<title>Tags - {{ config.title }}</title>
+{% endblock title %}
+
+{% block meta %}
+	<meta name="description" content="{{ config.description }}">
+	<meta property="og:title" content="Tags - {{ config.title }}">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="{{ config.extra.paralax.logo }}">
+	<meta property="og:url" content="{{ current_url }}">
+	<meta property="og:description" content="{{ config.description }}">
+	<meta property="og:site_name" content="{{ config.title }}">
+{% endblock meta %}
+
+{% block main %}
+	{% for tag in tags %}
+		<header class="PostHeader">
+			<h1 class="PostHeader__title"><a href="/tags/{{ tag.slug }}">{{ tag.name }}</a></h1>
+			<p class="PostHeader__info">
+				{{ tag.pages | length }} post{{ tag.pages | length | pluralize }}
+			</p>
+		</header>
+	{% endfor %}
+{% endblock main %}
+

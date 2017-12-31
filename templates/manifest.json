@@ -1,0 +1,7 @@
+{
+	"name": "{{ config.description }}",
+	"short_name": "{{ config.title }}",
+	"display": "browser",
+	"scope": "/",
+	"start_url": "/"
+  }
