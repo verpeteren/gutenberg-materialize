@@ -20,6 +20,7 @@ logo = "http://placehold.it/300x300"
 links = [
     {url = "/", name = "Home"},
     {url = "/blog", name = "Blog"},
+    {url = "/projects", name = "Projects"},
 ]
 [extra.paralax.colorscheme]
 font = {one = "teal", two="brown", three = "white"}

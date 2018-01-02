@@ -189,16 +189,18 @@ Please note, that `tags` and `categories` will be added when these are activated
 links = [
     {url = "/", name = "Home"},
     {url = "/blog", name = "Blog"},
+    {url = "/projects", name = "Projects"},
 ]
 ```
 
 #### Color scheme
 
-It is possible to tweak the some colors. It is not ideal, but it works.
+It is possible to tweak the some colors. It is not ideal, but it works. You can use the [standard color names of materialize](http://materializecss.com/color.html).
 
 ```toml
 [extra.paralax.colorscheme]
 font = {one = "teal", two="brown", three = "white"}
+background = {one = "teal", two="brown", three = "white"}
 ```
 
 #### Footer

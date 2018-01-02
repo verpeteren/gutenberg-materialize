@@ -37,7 +37,7 @@
 <body>
 	<header class="{{ config.extra.paralax.colorscheme.background.three }}">
 		{% block sidebar %}
-			<div id="nav-mobile" class="side-nav fixed {{ config.extra.paralax.colorscheme.background.two }}" style="transform: translateX(0%);">
+			<div id="nav-mobile" class="side-nav fixed {{ config.extra.paralax.colorscheme.background.three }}" style="transform: translateX(0%);">
 				<div class="container">
 					<div class="sidebar-about">
 						{% block sidebar_about %}
@@ -419,8 +419,12 @@
 	</nav>
 
 	<main>
-		{% block main %}
-		{% endblock main %}
+		<div class="row">
+			<div class="col s10">
+				{% block main %}
+				{% endblock main %}
+			</div>
+		</div>
 
 	</main>
 
