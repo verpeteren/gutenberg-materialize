@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}
 	<title>{{ page.title }} - {{ config.title }}</title>
@@ -7,7 +7,7 @@
 {% block meta %}
 	<meta name="description" content="{{ page.description }}">
 	<meta property="og:title" content="{{ page.title }}">
-	<meta property="og:image" content="{{ config.extra.paralax.logo }}">
+	<meta property="og:image" content="{{ config.extra.materialize.logo }}">
 	<meta property="og:url" content="{{ page.permalink }}">
 	<meta property="og:description" content="{{ page.description }}">
 	<meta property="og:site_name" content="{{ config.title }}">

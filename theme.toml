@@ -1,7 +1,7 @@
-name = "paralax"
+name = "materialize"
 description = "A straight forward materialized landing theme"
 license = "MIT"
-homepage = "https://github.com/verpeteren/gutenberg-paralax"
+homepage = "https://github.com/verpeteren/gutenberg-materialize"
 min_version = "0.2.2"
 
 [extra]
@@ -11,42 +11,42 @@ name = "Peter Reijnders"
 homepage = "https://verpeteren.nl"
 
 [original]
-author =  "Paralax"
+author =  "Materialize"
 homepage = "http://materializecss.com/"
 repo = "https://github.com/Dogfalo/materialize/"
 
-[extra.paralax]
-logo = "http://placehold.it/300x300"
+[extra.materialize]
+logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/320x320"}
+home = {url = "/index", name = "Home"}
 links = [
-    {url = "/", name = "Home"},
     {url = "/blog", name = "Blog"},
     {url = "/projects", name = "Projects"},
 ]
-[extra.paralax.colorscheme]
+[extra.materialize.colorscheme]
 font = {one = "teal", two="brown", three = "white"}
 background = {one = "teal", two="brown", three = "white"}
 
-[extra.paralax.footer]
+[extra.materialize.footer]
 
-[extra.paralax.footer.bio]
+[extra.materialize.footer.bio]
 title = "Company Bio"
 description = "Bla bla bla bla bla. Rubarb Rubarb, Rubarb. Yada yada yada. Bla!"
 
-[extra.paralax.footer.references]
+[extra.materialize.footer.references]
 title = "References"
 list = [
     {url = "http://example.com", name="example 1"},
     {url = "http://example.com", name="example 2"},
 ]
 
-[extra.paralax.footer.contact]
+[extra.materialize.footer.contact]
 title = "Contact"
 list = [
     {url = "mailto://me@example.com", name="mail"},
     {url = "tel://003123456789", name="phone"}
 ]
 
-[extra.paralax.social]
+[extra.materialize.social]
 
 ga = "UA-12345678-9"
 discuss = "verpeteren"
@@ -98,45 +98,3 @@ xing = "peter_reijnders123"
 meetup = "A-Meetup-Group"
 justgiving = "verpeteren"
 
-[extra.paralax.index]
-text= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
-
-[extra.paralax.index.images]
-
-[extra.paralax.index.images.one]
-file = "background1.jpg"
-alt = "Design thingking by Patrick Perkins"
-title = "gutenberg paralax template"
-subtitle = "Modern opionated responsive front-end framework Material Design static templates"
-cta = { url = "/blog", name = "get started" }
-
-[extra.paralax.index.images.two]
-file = "background2.jpg"
-alt = "Brainstorming over paper by Helloquence"
-title = "materialize"
-subtitle = "A modern responsive front-end framework based on Material Design"
-cta = { url = "materializecss.com", name = "Get Materialize" }
-
-[extra.paralax.index.images.three]
-file = "background3.jpg"
-alt = "Shot before the shoot by Nik MacMillan"
-title = "gutenberg"
-subtitle = "An opinionated static site generator with everything built-in"
-cta = { url = "getguterberg.io", name = "Get Gutenberg" }
-
-[extra.paralax.index.features]
-[extra.paralax.index.features.one]
-icon = "flash_on"
-title ="Reason one"
-text = "Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla."
-
-[extra.paralax.index.features.two]
-icon = "group"
-title = "Reason two"
-text = "Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb." 
-
-[extra.paralax.index.features.three]
-icon =  "settings"
-title =  "Reason three"
-text = "Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada."
-	

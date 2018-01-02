@@ -1,1 +1,10 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
+{% block main %}
+    <h1>{{ section.title }} </h1>
+    <h2>{{ section.description }} </h2>
+	{% for content_page in section.pages %}
+		<header class="PostHeader">
+            <a href="{{ content_page.permalink }}">{{ content_page.title }} ({{ content_page.reading_time + 1 }} minutes read)</a>
+		</header>
+	{% endfor %}
+{% endblock main %}
