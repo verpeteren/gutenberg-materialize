@@ -35,9 +35,9 @@
 </head>
 
 <body>
-	<header class="{{ config.extra.paralax.colorscheme.font.three }}">
+	<header class="{{ config.extra.paralax.colorscheme.background.three }}">
 		{% block sidebar %}
-			<div id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
+			<div id="nav-mobile" class="side-nav fixed {{ config.extra.paralax.colorscheme.background.two }}" style="transform: translateX(0%);">
 				<div class="container">
 					<div class="sidebar-about">
 						{% block sidebar_about %}
@@ -387,7 +387,7 @@
 			</div>
 		{% endblock sidebar %}
 	</header>
-	<nav class="{{ config.extra.paralax.colorscheme.font.three }}" role="navigation">
+	<nav class="{{ config.extra.paralax.colorscheme.background.three }}" role="navigation">
 		<div class="nav-wrapper container">
 			<a id="logo-container" href="#" class="brand-logo">
 				<img src="{{ config.extra.paralax.logo }}" class="logo" alt="Logo">
@@ -424,7 +424,7 @@
 
 	</main>
 
-	<footer class="page-footer {{ config.extra.paralax.colorscheme.font.one }}">
+	<footer class="page-footer {{ config.extra.paralax.colorscheme.background.one }}">
 		<div class="container">
 			<div class="row">
 				<div class="col l6 s12">

@@ -250,5 +250,6 @@ Yes, I cheated and took a lot of ideas from [seventeencups]( https://github.com/
 [ ] make layout of the index page pretty
 [ ] clean up unused css stuff
 [ ] do-da-scss-thing 
-[ ] drop/rename `font` in the colorscheme, and use better names instead of one, two, three.
+[X] drop/rename `font` in the colorscheme
+[ ] use better names instead of one, two, three in the colorscheme.
 [ ] check manifest.json, sitemap.xml, robots.txt
