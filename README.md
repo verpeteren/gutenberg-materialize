@@ -29,7 +29,8 @@ It's design goals are:
 - [Todo](#todo)
 
 ## Installation
-First download this theme to your `themes` directory:
+
+First, download this theme to your `themes` directory:
 
 ```bash
 $ cd themes
@@ -41,12 +42,126 @@ and then enable it in your `config.toml`:
 theme = "paralax"
 ```
 
-Please note: if you are using an pre 0.2.2-next version of gutenberg you might need use the following hack to avoid issue  [Keats/tera#235](https://github.com/Keats/tera/issues/235)
+Second: check your version:
+
+```bash
+gutenberg --version
+```
+
+If you are using an pre 0.2.2-next version of gutenberg you might need use the following hack to avoid issue  [Keats/tera#235](https://github.com/Keats/tera/issues/235)
 
 ```bash
 cp themes/paralax/templates/macro.html templates/macro.html
 echo "" > themes/paralax/templates/macro.html
 ```
+
+Third, set up the options that you want to use in your  `config.toml`. The available options are all present in `themes/paralax/theme.toml' and these are documented in  [Options - general ](#options-general) and [Options - index page ](#options-index-page)
+
+```bash
+vi config.toml themes/paralax/theme.toml
+```
+
+Forth: finetune your templates by copy any of the `themes/paralax/templates/` into your `templates` folder.
+```bash
+cp themes/paralax/templates/macros.html templates/macros.html
+vi templates/macros.html
+```
+
+
+Fifth, Write some content: gutenberg has a lot of [clever options](https://www.getgutenberg.io/documentation/content/page/). The following files give you a head start with some tags, categories and [linked pages](#links)
+
+````bash
+#!/bin/bash
+
+mkdir -p content/pages
+
+cat << EOF > content/pages/projects.md
++++
+title = "Projects"
+path = "/projects"
+date = "2018-01-02"
+tags=["article"]
+category="documentation"
+draft = false
++++
+
+This is the teaser line.
+
+<!-- more -->
+
+This is the rest of the cruft.
+
+<p>direct html is possible<p>
+EOF
+
+mkdir -p content/blog
+cat << EOF > content/blog/_index.md
++++
+# section front-matter: see https://www.getgutenberg.io/documentation/content/section/
+sort_by = "date"
+redirect_to = "/"
++++
+EOF
+
+cat << EOF > content/blog/hello-gutenberg.md
++++
+# page front matter: see https://www.getgutenberg.io/documentation/content/page/
+title = "Hello, Gutenberg!"
+date = "2018-01-02"
+tags = ["gutenberg"]
+category = "documentation"
+draft = false
+
+[extra]
++++
+
+This is the teaser line.
+
+<!-- more -->
+
+This is the rest of the cruft.
+
+If you enabled [syntax highlighting]()https://www.getgutenberg.io/documentation/getting-started/configuration/#syntax-highlighting, the following should work:
+
+\`\`\`php
+$cool_stuff = file_get_contents("http://nidium.com");
+\`\`\`
+
+EOF
+
+mkdir -p content/blog/another-post
+cat << EOF > content/blog/another-post/index.md
++++
+title = "Aonther post"
+date = "2018-01-02"
+tags = ["gutenberg"]
+category = "documentation"
+aliases = ["/other-ffing-post"]
+draft = false
+
+[extra]
+github = "https://github.com/verpeteren/gutenberg-paralax"
++++
+
+This is the teaser line.
+
+<!-- more -->
+
+This is the rest of the cruft..
+Due to [Asset colocaton](https://www.getgutenberg.io/documentation/content/overview/#assets-colocation), you can save your files in this subdirectory, right next to the \`index.md\`. E.G.
+\`content/blog/another-post/[missing_file.png](missing_file.png)\`.
+EOF
+
+wget -q -O content/blog/another-post/missing_file.png http://placehold.it/30x130.png
+
+````
+
+Sixth, Start the development server
+
+```bash
+gutenberg serve
+```
+
 
 ## Options 
 
@@ -232,24 +347,28 @@ icon = "flash_on"
 title ="Reason one"
 text = "Bla Bla Bla. Bla, ... "
 ```
+
 ### License
 
 MIT
 
 ### Credits
 
-Yes, I cheated and took a lot of ideas from [seventeencups]( https://github.com/17cupsofcoffee/seventeencups.net)
+Yes, I cheated and took a lot of ideas from [seventeencups]( https://github.com/17cupsofcoffee/seventeencups.net).
 
 ## Todo
-[X] add a readme file
-[X] add the license file 
-[X] get a basic working index page
-[ ] get a basic working post/blog page
-[ ] get basic working tag page
-[ ] get basic working categories page
-[ ] make layout of the index page pretty
-[ ] clean up unused css stuff
-[ ] do-da-scss-thing 
-[X] drop/rename `font` in the colorscheme
-[ ] use better names instead of one, two, three in the colorscheme.
-[ ] check manifest.json, sitemap.xml, robots.txt
+
+This is far from complete:
+
+- [X] add a readme file
+- [X] add the license file 
+- [X] get a basic working index page
+- [ ] get a basic working post/blog page
+- [ ] get basic working tag page
+- [ ] get basic working categories page
+- [ ] make layout of the index page pretty
+- [ ] clean up unused css stuff
+- [ ] do-da-scss-thing 
+- [X] drop/rename `font` in the colorscheme
+- [ ] use better names instead of one, two, three in the colorscheme.
+- [ ] check manifest.json, sitemap.xml, robots.txt
