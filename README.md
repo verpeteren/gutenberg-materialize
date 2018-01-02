@@ -41,6 +41,13 @@ and then enable it in your `config.toml`:
 theme = "paralax"
 ```
 
+Please note: if you are using an pre 0.2.2-next version of gutenberg you might need use the following hack to avoid issue  [Keats/tera#235](https://github.com/Keats/tera/issues/235)
+
+```bash
+cp themes/paralax/templates/macro.html templates/macro.html
+echo "" > themes/paralax/templates/macro.html
+```
+
 ## Options 
 
 ### Options - General

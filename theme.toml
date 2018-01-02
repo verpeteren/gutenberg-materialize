@@ -2,7 +2,7 @@ name = "paralax"
 description = "A straight forward materialized landing theme"
 license = "MIT"
 homepage = "https://github.com/verpeteren/gutenberg-paralax"
-min_version = "0.2"
+min_version = "0.2.2"
 
 [extra]
 
@@ -23,6 +23,7 @@ links = [
 ]
 [extra.paralax.colorscheme]
 font = {one = "teal", two="brown", three = "white"}
+background = {one = "teal", two="brown", three = "white"}
 
 [extra.paralax.footer]
 
