@@ -435,10 +435,10 @@ This is far from complete:
 - [X] add the license file
 - [X] get a basic working index page
 - [X] get a basic working post/blog page
-- [ ] get basic working tag page
-- [ ] get basic working categories page
+- [X] get basic working tag page
+- [X] get basic working categories page
 - [ ] use materialize selections/cards for categories, sections, tags, ...
-- [ ] make layout of the sidebar pretty
+- [X] make layout of the sidebar pretty
 - [ ] clean up unused css stuff
 - [ ] do-da-scss-thing
 - [X] drop/rename `font` in the colorscheme
