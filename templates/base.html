@@ -21,7 +21,6 @@
 	{% endblock title %}
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link type="text/css" rel="stylesheet" href="{{ get_url(path="/css/materialize.css") }}" media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href="{{ get_url(path="/css/style.css") }}" media="screen,projection"/>
 
 	<link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon-192x192.png") }}">
 	<link rel="icon" type="image/png" sizes="128x128" href="{{ get_url(path="favicon-128x128.png") }}">
@@ -35,96 +34,102 @@
 </head>
 
 <body>
-	<nav class="{{ config.extra.materialize.colorscheme.background.three }}" role="navigation">
-		<div class="nav-wrapper container">
-			<a id="logo-container" href="#" class="brand-logo">
-				<img src="{{ config.extra.materialize.logo.small }}" class="logo" alt="Logo">
-			</a>
-			<ul class="right hide-on-med-and-down">
-				{% if config.extra.materialize.home %}
-					<li><a href="{{ config.extra.materialize.home.url }}">{{ config.extra.materialize.home.name }}</a></li>
-				{% endif %}
-				{% for link in config.extra.materialize.links %}
-					<li><a href="{{link.url}}">{{link.name}}</a></li>
-				{% endfor %}
-				{% if config.generate_tags_pages %}
-					<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
-				{% endif %}
-				{% if config.generate_categories_pages %}
-					<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
-				{% endif %}
-			</ul>
-			<ul id="nav-mobile" class="side-nav">
-				{% for link in config.extra.materialize.links %}
-					<li><a href="{{link.url}}">{{link.name}}</a></li>
-				{% endfor %}
-				{% if config.generate_tags_pages %}
-					<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
-				{% endif %}
-				{% if config.generate_categories_pages %}
-					<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
-				{% endif %}
-			</ul>
-			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-		</div>
-	</nav>
-
-	<main>
-		{% block sidebar%}
-		{% endblock sidebar %}
-    	<div class="row">
-			{% block main %}
-			{% endblock main %}
-		</div>
-	</main>
-
-	<footer class="page-footer {{ config.extra.materialize.colorscheme.background.one }}">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.bio.title }}</h5>
-					<p class="grey-text text-lighten-4">{{ config.extra.materialize.footer.bio.description }}</p>
-					</p>
-				</div>
-				<div class="col l3 s12">
-					<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.references.title }}</h5>
-					<ul>
-						{% for reference in config.extra.materialize.footer.references.list %}
-							<li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
-				<div class="col l3 s12">
-					<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.contact.title }}</h5>
-					<ul>
-						{% for reference in config.extra.materialize.footer.contact.list %}
-							<li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2017 <a class="{{ config.extra.materialize.colorscheme.font.two }}-text text-lighten-3" href="{{ get_url(path="{{ config.base_url }}") }}"> {{config.title }}.
-			</div>
-		</div>
-	</footer>
-
-	<script src="/js/jquery-2.1.1.min.js"></script>
-	<script src="/js/materialize.min.js"></script>
-	<script src="/js/init.js"></script>
-	{% if config.extra.materialize.social.ga %}
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		ga('create', '{{config.extra.materialize.social.ga }}', 'auto');
-		ga('send', 'pageview');
-	</script>
-	{% endif %}
-
+    <div id="root">
+        {% block sidebar%}
+        {% endblock sidebar %}
+        <header class="{{ config.extra.materialize.colorscheme.background.three }}">
+            <nav class="nav top-nav{{ config.extra.materialize.colorscheme.background.three }}" role="navigation">
+                <!-- div class="nav top-nav container" -->
+				<a id="logo-container" href="#" class="brand-logo">
+                    <img src="{{ config.extra.materialize.logo.small }}" class="logo" alt="Logo">
+				</a>
+				<ul class="right hide-on-med-and-down">
+                    {% if config.extra.materialize.home %}
+                    <li><a href="{{ config.extra.materialize.home.url }}">{{ config.extra.materialize.home.name }}</a></li>
+					{% endif %}
+					{% for link in config.extra.materialize.links %}
+                    <li><a href="{{link.url}}">{{link.name}}</a></li>
+					{% endfor %}
+					{% if config.generate_tags_pages %}
+                    <li><a href="{{ get_url(path="tags") }}">Tags</a></li>
+					{% endif %}
+					{% if config.generate_categories_pages %}
+                    <li><a href="{{ get_url(path="categories") }}">Categories</a></li>
+					{% endif %}
+				</ul>
+				<ul id="nav-mobile" class="side-nav">
+                    {% for link in config.extra.materialize.links %}
+                    <li><a href="{{link.url}}">{{link.name}}</a></li>
+					{% endfor %}
+					{% if config.generate_tags_pages %}
+                    <li><a href="{{ get_url(path="tags") }}">Tags</a></li>
+					{% endif %}
+					{% if config.generate_categories_pages %}
+                    <li><a href="{{ get_url(path="categories") }}">Categories</a></li>
+					{% endif %}
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                <!--/div -->
+            </nav>
+        </header>
+        
+        <main>
+            <div class="container">
+                <div class="row">
+                    {% block main %}
+                    {% endblock main %}
+                </div>
+            </div>
+        </main>
+        
+        <footer class="page-footer {{ config.extra.materialize.colorscheme.background.one }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.bio.title }}</h5>
+                        <p class="grey-text text-lighten-4">{{ config.extra.materialize.footer.bio.description }}</p>
+                    </p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.references.title }}</h5>
+                        <ul>
+                            {% for reference in config.extra.materialize.footer.references.list %}
+                            <li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.contact.title }}</h5>
+                        <ul>
+                            {% for reference in config.extra.materialize.footer.contact.list %}
+                            <li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2017 <a class="{{ config.extra.materialize.colorscheme.font.two }}-text text-lighten-3" href="{{ get_url(path="{{ config.base_url }}") }}"> {{config.title }}.
+                </div>
+            </div>
+        </footer>
+        
+        <script src="/js/jquery-2.1.1.min.js"></script>
+        <script src="/js/materialize.min.js"></script>
+        <script src="/js/init.js"></script>
+        {% if config.extra.materialize.social.ga %}
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', '{{config.extra.materialize.social.ga }}', 'auto');
+            ga('send', 'pageview');
+        </script>
+        {% endif %}
+    </div>
+    
 </body>
 </html>

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% block extra_head %}
+	<link type="text/css" rel="stylesheet" href="{{ get_url(path="/css/style.css") }}" media="screen,projection"/>
+{% endblock extra_head %}
 {% block sidebar %}
-    <header class="{{ config.extra.materialize.colorscheme.background.three }}">
+    <div id="sidebar" class="{{ config.extra.materialize.colorscheme.background.three }}">
         <div id="nav-mobile" class="side-nav fixed {{ config.extra.materialize.colorscheme.background.three }}" style="transform: translateX(0%);">
             <div class="container">
                 <div class="sidebar-about">
@@ -359,7 +362,7 @@
                 </ul>
             </div>
         </div>
-    </header>
+    </div>
 {% endblock sidebar %}
 {% block main %}
     <div class="col s10 l10">
