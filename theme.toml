@@ -16,7 +16,7 @@ homepage = "http://materializecss.com/"
 repo = "https://github.com/Dogfalo/materialize/"
 
 [extra.materialize]
-logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/320x320"}
+logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
 home = {url = "/index", name = "Home"}
 links = [
     {url = "/blog", name = "Blog"},

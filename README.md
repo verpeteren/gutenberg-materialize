@@ -237,7 +237,7 @@ Probably obvious, but transparent logo's work best.
 
 ```toml
 [extra.materialize]
-logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/320x320"}
+logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
 ```
 #### Landing page
 
@@ -402,7 +402,7 @@ file = "background1.jpg"
 alt = "Design thingking by Patrick Perkins"
 title = "gutenberg materialize template"
 subtitle = "Modern opionated responsive front-end framework Material Design static templates"
-cta = { url = "/blog", name = "get started" }
+cta = { url = "/blog", name = "get started", pulse = "pulse" }
 ```
 
 #### Features

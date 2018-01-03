@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-
-
 {% block meta %}
 	<meta name="description" content="{{ config.description }}">
 	<meta property="og:title" content="{{ config.title }}">
@@ -10,6 +8,50 @@
 	<meta property="og:description" content="{{ config.description }}">
 	<meta property="og:site_name" content="{{ config.title }}">
 {% endblock meta %}
+{% block extra_head %}
+<style>
+	.parallax-container {
+		min-height: 380px;
+		line-height: 0;
+		height: auto;
+		color: rgba(255,255,255,.9);
+	}
+	.parallax-container .section {
+		width: 100%;
+	}
+	@media only screen and (max-width : 992px) {
+		.parallax-container .section {
+			position: absolute;
+			top: 40%;
+		}
+		#index-banner .section {
+			top: 10%;
+		}
+	}
+	
+	@media only screen and (max-width : 600px) {
+		#index-banner .section {
+			top: 0;
+		}
+	}
+	.content {
+		margin: 0 auto;
+		width: 100%;
+		float: none;
+		display: initial;
+	}
+		
+	.container {
+		width: 100%;
+		float: none;
+		display: initial;
+		padding-left:  1rem;
+		padding-right: 1rem;
+		margin: 0 auto;
+	}
+</style>
+{% endblock extra_head %}
+
 {% block sidebar %}
 {% endblock sidebar %}
 {% block main %}
@@ -29,7 +71,7 @@
 					{% endif %}
 					{% if page.extra.paralax.images.one.cta %}
 					<div class="row center">
-						<a href="{{ page.extra.paralax.images.one.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ config.extra.materialize.colorscheme.font.one  }} lighten-1">{{ page.extra.paralax.images.one.cta.name }}</a>
+						<a href="{{ page.extra.paralax.images.one.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.one.cta.pulse }} {{ config.extra.materialize.colorscheme.font.one  }} lighten-1">{{ page.extra.paralax.images.one.cta.name }}</a>
 					</div>
 					{% endif %}
 					<br>
@@ -84,7 +126,7 @@
 					</div>
 					{% if page.extra.paralax.images.two.cta %}
 					<div class="row center">
-						<a href="{{ page.extra.paralax.images.two.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ config.extra.materialize.colorscheme.font.one }} lighten-1">{{ page.extra.paralax.images.two.cta.name }}</a>
+						<a href="{{ page.extra.paralax.images.two.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.two.cta.pulse }} {{ config.extra.materialize.colorscheme.font.one }} lighten-1">{{ page.extra.paralax.images.two.cta.name }}</a>
 					</div>
 					{% endif %}
 				</div>
@@ -122,7 +164,7 @@
 						</div>
 						{% if page.extra.paralax.images.three.cta %}
 						<div class="row center">
-							<a href="{{ page.extra.paralax.images.three.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ config.extra.materialize.colorscheme.font.one }} lighten-1">{{ page.extra.paralax.images.three.cta.name }}</a>
+							<a href="{{ page.extra.paralax.images.three.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.three.cta.pulse }} {{ config.extra.materialize.colorscheme.font.one }} lighten-1">{{ page.extra.paralax.images.three.cta.name }}</a>
 						</div>
 						{% endif %}
 					</div>
