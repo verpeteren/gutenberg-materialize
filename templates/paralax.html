@@ -28,7 +28,7 @@
 			top: 10%;
 		}
 	}
-	
+
 	@media only screen and (max-width : 600px) {
 		#index-banner .section {
 			top: 0;
@@ -40,7 +40,7 @@
 		float: none;
 		display: initial;
 	}
-		
+
 	.container {
 		width: 100%;
 		float: none;
@@ -88,24 +88,36 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center {{ config.extra.materialize.colorscheme.font.two }}-text"><i class="material-icons">{{ page.extra.paralax.features.one.icon }}</i></h2>
-							<h5 class="center">{{ page.extra.paralax.features.one.title }}</h5>
-							<p class="light">{{ page.extra.paralax.features.one.text }}</p>
+							{% if page.extra.paralax.one.title %}
+								<h5 class="center">{{ page.extra.paralax.features.one.title }}</h5>
+							{% endif %}
+							{% if page.extra.paralax.one.text %}
+								<p class="light">{{ page.extra.paralax.features.one.text }}</p>
+							{% endif %}
 						</div>
 					</div>
-					
+
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center {{ config.extra.materialize.colorscheme.font.two }}-text"><i class="material-icons">{{ page.extra.paralax.features.two.icon }}</i></h2>
-							<h5 class="center">{{ page.extra.paralax.features.two.title }}</h5>
-							<p class="light">{{ page.extra.paralax.features.two.text }}</p>
+							{% if page.extra.paralax.two.title %}
+								<h5 class="center">{{ page.extra.paralax.features.two.title }}</h5>
+							{% endif %}
+							{% if page.extra.paralax.two.text %}
+								<p class="light">{{ page.extra.paralax.features.two.text }}</p>
+							{% endif %}
 						</div>
 					</div>
-					
+
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center {{ config.extra.materialize.colorscheme.font.two }}-text"><i class="material-icons">{{ page.extra.paralax.features.three.icon }}</i></h2>
-							<h5 class="center">{{ page.extra.paralax.features.three.title }}</h5>
-							<p class="light">{{ page.extra.paralax.features.three.text }}</p>
+							{% if page.extra.paralax.three.title %}
+								<h5 class="center">{{ page.extra.paralax.features.three.title }}</h5>
+							{% endif %}
+							{% if page.extra.paralax.three.text %}
+								<p class="light">{{ page.extra.paralax.features.three.text }}</p>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -135,7 +147,7 @@
 				<img src="/img/{{ page.extra.paralax.images.two.file }}" alt="{{ page.extra.paralax.images.two.alt }}">
 			</div>
 		</div>
-	
+
 		<div class="container">
 			<div class="section {{ config.extra.materialize.colorscheme.background.three }}">
 				<div class="row">
@@ -148,7 +160,7 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="parallax-container valign-wrapper">
 			<div class="section no-pad-bot">
 				<div class="container">
@@ -175,4 +187,4 @@
 			</div>
 		{% endblock main %}
 	</div>
-		
+
