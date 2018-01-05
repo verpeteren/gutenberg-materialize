@@ -71,7 +71,7 @@
                 <!--/div -->
             </nav>
     </header>
-	
+
 	<main>
         <div class="container">
             <div class="row">
@@ -80,7 +80,7 @@
 			</div>
 		</div>
 	</main>
-    
+
 	<footer class="page-footer {{ config.extra.materialize.colorscheme.background.one }}">
         <div class="container">
             <div class="row">
@@ -111,8 +111,8 @@
             <div class="container">
 				<div class="row">
 					<div class="col s6">
-						<a class="{{ config.extra.materialize.colorscheme.font.two }}-text text-lighten-3" href="{{ get_url(path="{{ config.base_url }}") }}"> 
-							© 2017 {{config.title }}.
+						<a class="{{ config.extra.materialize.colorscheme.font.two }}-text text-lighten-3" href="{{ get_url(path="{{ config.extra.materialize.copyright.url }}") }}">
+							{{ config.extra.materialize.copyright.name }}
 						</a>
 					</div>
 					<div class="col s3">
@@ -134,7 +134,7 @@
 			</div>
 		</div>
 	</footer>
-    
+
 	<script src="/js/jquery-2.1.1.min.js"></script>
 	<script src="/js/materialize.min.js"></script>
 	<script src="/js/init.js"></script>
@@ -144,12 +144,12 @@
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        
+
 		ga('create', '{{config.extra.materialize.social.ga }}', 'auto');
 		ga('send', 'pageview');
 	</script>
 	{% endif %}
-    
+
 </div>
 </body>
 </html>

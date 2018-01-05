@@ -15,6 +15,7 @@ It's design goals are:
   - [Options - general ](#options-general)
     - [Logo](#logo)
     - [Landing page](#landing-page)
+    - [Copyright](#copyright)
     - [Links](#links)
     - [Color scheme](#color-scheme)
     - [Footer](#footer)
@@ -120,13 +121,13 @@ text = "Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla Bla. Bla Bla
 [extra.paralax.features.two]
 icon = "group"
 title = "Reason two"
-text = "Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb." 
+text = "Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb. Rubarb Rubarb."
 
 [extra.paralax.features.three]
 icon =  "settings"
 title =  "Reason three"
 text = "Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada. Yada Yada Yada."
-	
+
 +++
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros.
 
@@ -252,11 +253,19 @@ Set the links to the `home` page. This works very well with the [paralax index p
 home = {url = "/index", name = "Home"}
 ```
 
+#### Copyright
+
+Sets the link in the footer
+
+```
+copyright = {url = "/#", name ="© 2018"}
+```
+
 #### Links
 
 Set list of `links` to be used in the navbar and the side bar.
 Please note, that `tags` and `categories` will be added when these are activated in the site's `config.toml`.
-Also the `home` will be [actived](#Landing-page) 
+Also the `home` will be [actived](#Landing-page)
 
 ```toml
 [extra.materialize]
@@ -407,7 +416,7 @@ subtitle = "Modern opionated responsive front-end framework Material Design stat
 cta = { url = "/blog", name = "get started", pulse = "pulse" }
 ```
 
-I happen to like the photos and the licensing terms at [unsplash.com](http://unsplash.com). To ease the download, resizing and renaming the following oneliner gets you started. 
+I happen to like the photos and the licensing terms at [unsplash.com](http://unsplash.com). To ease the download, resizing and renaming the following oneliner gets you started.
 
 ```bash
 wget -q -O - https://unsplash.com/photos/45FJgZMXCK8/download?force=true | convert -resize 1440 - static/img//background1.jpg
