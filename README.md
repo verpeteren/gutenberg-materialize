@@ -405,6 +405,12 @@ subtitle = "Modern opionated responsive front-end framework Material Design stat
 cta = { url = "/blog", name = "get started", pulse = "pulse" }
 ```
 
+I happen to like the photos and the licensing terms at [unsplash.com](http://unsplash.com). To ease the download, resizing and renaming the following oneliner gets you started. 
+
+```bash
+wget -q -O - https://unsplash.com/photos/45FJgZMXCK8/download?force=true | convert -resize 1440 - static/img//background1.jpg
+```
+
 #### Features
 
 There are 3 colums with each a [`icon`](http://materializecss.com/icons.html), `title` and a block of `text`.
