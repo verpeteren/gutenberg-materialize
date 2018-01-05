@@ -76,7 +76,7 @@ Fifth, Write some content: gutenberg has a lot of [clever options](https://www.g
 
 mkdir -p content
 
-cat << EOF > content/paralox.md
+cat << EOF > content/paralax.md
 +++
 template="paralax.html"
 title = "Index"
@@ -95,21 +95,21 @@ file = "background1.jpg"
 alt = "Design thingking by Patrick Perkins"
 title = "gutenberg materialize template"
 subtitle = "Modern opionated responsive front-end framework Material Design static templates"
-cta = { url = "/blog", name = "get started" }
+cta = { url = "http://github.com/verpeteren/gutenberg-materialize", name = "get started", pulse = "pulse" }
 
 [extra.paralax.images.two]
 file = "background2.jpg"
 alt = "Brainstorming over paper by Helloquence"
 title = "materialize"
 subtitle = "A modern responsive front-end framework based on Material Design"
-cta = { url = "materializecss.com", name = "Get Materialize" }
+cta = { url = "http://materializecss.com", name = "Get Materialize", pulse = "" }
 
 [extra.paralax.images.three]
 file = "background3.jpg"
 alt = "Shot before the shoot by Nik MacMillan"
 title = "gutenberg"
 subtitle = "An opinionated static site generator with everything built-in"
-cta = { url = "getguterberg.io", name = "Get Gutenberg" }
+cta = { url = "http://getgutenberg.io", name = "Get Gutenberg", pulse = ""}
 
 [extra.paralax.features]
 [extra.paralax.features.one]
@@ -132,14 +132,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id n
 
 <!-- more -->
 Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
+
 EOF
 
 mkdir -p content/pages
-
-cat << EOF > content/pages/projects.md
+cat << EOF > content/pages/project.md
 +++
-title = "Projects"
-path = "/projects"
+title = "Project page"
+description = "Overview of some projects"
+path = "/project"
 date = "2018-01-02"
 tags=["article"]
 category="documentation"
@@ -152,7 +153,7 @@ This is the teaser line.
 
 This is the rest of the cruft.
 
-<p>direct html is possible<p>
+<p>direct <b>html</b> is possible<p>
 EOF
 
 mkdir -p content/blog
@@ -160,7 +161,12 @@ cat << EOF > content/blog/_index.md
 +++
 # section front-matter: see https://www.getgutenberg.io/documentation/content/section/
 sort_by = "date"
-redirect_to = "/"
+#redirect_to = "/"
+insert_anchor_links = "right"
+title = "blog"
+description = "glob('blog')"
+slug = "BlogBlogBlog"
+path = "/blog"
 +++
 EOF
 
@@ -174,6 +180,7 @@ category = "documentation"
 draft = false
 
 [extra]
+github = "https://github.com/verpeteren/gutenberg-paralax"
 +++
 
 This is the teaser line.
@@ -182,18 +189,20 @@ This is the teaser line.
 
 This is the rest of the cruft.
 
-If you enabled [syntax highlighting]()https://www.getgutenberg.io/documentation/getting-started/configuration/#syntax-highlighting, the following should work:
+If you enabled [syntax highlighting](https://www.getgutenberg.io/documentation/getting-started/configuration/#syntax-highlighting), the following should work:
 
 \`\`\`php
-$cool_stuff = file_get_contents("http://nidium.com");
+$awesome_stuff = file_get_contents("http://nidium.com");
 \`\`\`
 
+As you can see, the github link also works by adding this to the `extra` settings in this page.
 EOF
 
 mkdir -p content/blog/another-post
+wget -q -O content/blog/another-post/missing_file.png http://placehold.it/30x130.png
 cat << EOF > content/blog/another-post/index.md
 +++
-title = "Aonther post"
+title = "Another post"
 date = "2018-01-02"
 tags = ["gutenberg"]
 category = "documentation"
@@ -201,7 +210,6 @@ aliases = ["/other-ffing-post"]
 draft = false
 
 [extra]
-github = "https://github.com/verpeteren/gutenberg-materialize"
 +++
 
 This is the teaser line.
@@ -209,12 +217,10 @@ This is the teaser line.
 <!-- more -->
 
 This is the rest of the cruft..
-Due to [Asset colocaton](https://www.getgutenberg.io/documentation/content/overview/#assets-colocation), you can save your files in this subdirectory, right next to the \`index.md\`. E.G.
-\`content/blog/another-post/[missing_file.png](missing_file.png)\`.
+
+Due to [Asset colocation](https://www.getgutenberg.io/documentation/content/overview/#assets-colocation), you can save your files in this subdirectory, right next to the `index.md`. E.G.
+`content/blog/another-post/[missing_file.png](missing_file.png)`.
 EOF
-
-wget -q -O content/blog/another-post/missing_file.png http://placehold.it/30x130.png
-
 ````
 
 Sixth, Start the development server
@@ -223,22 +229,20 @@ Sixth, Start the development server
 gutenberg serve
 ```
 
-
 ## Options
 
 ### Options - General
-
 
 #### Logo
 
 Set the `logo` to be used in the navbar (small) and in the side bar (big).
 Probably obvious, but transparent logo's work best.
 
-
 ```toml
 [extra.materialize]
 logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
 ```
+
 #### Landing page
 
 Set the links to the `home` page. This works very well with the [paralax index page](#options-index-page)
@@ -252,14 +256,13 @@ home = {url = "/index", name = "Home"}
 
 Set list of `links` to be used in the navbar and the side bar.
 Please note, that `tags` and `categories` will be added when these are activated in the site's `config.toml`.
-
+Also the `home` will be [actived](#Landing-page) 
 
 ```toml
 [extra.materialize]
 links = [
-    {url = "/", name = "Home"},
-    {url = "/blog", name = "Blog"},
     {url = "/projects", name = "Projects"},
+    {url = "/blog", name = "Blog"},
 ]
 ```
 
@@ -376,7 +379,6 @@ linkedin = "peter-reijnders-83634149"
 xing = "peter_reijnders123"
 meetup = "A-Meetup-Group"
 justgiving = "verpeteren"
-
 ```
 
 ### Options - index page
@@ -449,5 +451,5 @@ This is far from complete:
 - [ ] do-da-scss-thing
 - [X] drop/rename `font` in the colorscheme
 - [ ] use better names instead of one, two, three in the colorscheme.
-- [ ] check manifest.json, sitemap.xml, robots.txt
-- [ ] update documentation (options, bash content script)
+- [X] check manifest.json, sitemap.xml, robots.txt
+- [X] update documentation (options, bash content script)
