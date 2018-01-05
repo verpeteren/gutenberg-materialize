@@ -19,8 +19,8 @@ repo = "https://github.com/Dogfalo/materialize/"
 logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
 home = {url = "/index", name = "Home"}
 links = [
+    {url = "/project", name = "Project page"},
     {url = "/blog", name = "Blog"},
-    {url = "/projects", name = "Projects"},
 ]
 [extra.materialize.colorscheme]
 font = {one = "teal", two="brown", three = "white"}

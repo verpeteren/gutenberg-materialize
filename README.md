@@ -443,7 +443,7 @@ This is far from complete:
 - [X] get a basic working post/blog page
 - [X] get basic working tag page
 - [X] get basic working categories page
-- [ ] use materialize selections/cards for categories, sections, tags, ...
+- [X] use materialize selections/cards for categories, sections, tags, ...
 - [X] make layout of the sidebar pretty
 - [ ] clean up unused css stuff
 - [ ] do-da-scss-thing

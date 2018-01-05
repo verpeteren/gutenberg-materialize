@@ -15,8 +15,13 @@
 {% endblock meta %}
 
 {% block main %}
-	{% for page in category.pages %}
-		{{ macros::post_header(page=page) }}
-	{% endfor %}
+	<ul class="collection">
+		{% for page in category.pages %}
+			<li class="collection-item">
+				{{ macros::post_header(page=page) }}
+				<p>{{ page.summary | safe }}</p>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock main %}
 

@@ -15,13 +15,17 @@
 {% endblock meta %}
 
 {% block main %}
-	{% for tag in tags %}
-		<header class="PostHeader">
-			<h1 class="PostHeader__title"><a href="/tags/{{ tag.slug }}">{{ tag.name }}</a></h1>
-			<p class="PostHeader__info">
-				{{ tag.pages | length }} post{{ tag.pages | length | pluralize }}
-			</p>
-		</header>
-	{% endfor %}
+    <h1>Tags</h1>
+    <h2>&nbsp;</h2>
+	<ul class="collection">
+		{% for tag in tags %}
+			<li class="collection-item">
+				<a class="title" href="/tags/{{ tag.slug }}">Tag: {{ tag.name }}</a>
+				<p>
+					{{ tag.pages | length }} post{{ tag.pages | length | pluralize }}
+				</p>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock main %}
 

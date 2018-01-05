@@ -2,9 +2,15 @@
 {% block main %}
     <h1>{{ section.title }} </h1>
     <h2>{{ section.description }} </h2>
-	{% for content_page in section.pages %}
-		<header class="PostHeader">
-            <a href="{{ content_page.permalink }}">{{ content_page.title }} ({{ content_page.reading_time + 1 }} minutes read)</a>
-		</header>
-	{% endfor %}
+	<ul class="collection">
+		{% for content_page in section.pages %}
+			<li class="collection-item">
+				<a class="title" href="{{ content_page.permalink }}">{{ content_page.title }} ({{ content_page.reading_time + 1 }} minutes read)</a>
+				<p>
+					{{ content_page.summary | safe }}
+				</p>
+			</li>
+		{% endfor %}
+	</ul>
+
 {% endblock main %}
