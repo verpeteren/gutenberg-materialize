@@ -1,13 +1,16 @@
 header{
-  margin-left:300px;
+  margin-left: 300px;
 }
 main {
-  margin-left:300px;
+  margin-left: 300px;
 }
 footer{
-  margin-left:300px;
+  margin-left: 300px;
+}
+.logo {
+    padding: 10px;
 }
 .icon {
-    width:32px;
-    height:42px;
+    width: 32px;
+    height: 42px;
 }
