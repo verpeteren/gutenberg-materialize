@@ -49,7 +49,8 @@ list = [
 
 [extra.materialize.social]
 
-#ga = "UA-12345678-9"
+ga = "UA-112179527-1"
+
 #discuss = "verpeteren"
 
 #facebook = "verpeteren"
