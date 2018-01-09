@@ -71,7 +71,7 @@
 					{% endif %}
 					{% if page.extra.paralax.images.one.cta %}
 					<div class="row center">
-						<a href="{{ page.extra.paralax.images.one.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.one.cta.pulse }} {{ config.extra.materialize.colorscheme.font.one  }} lighten-1">{{ page.extra.paralax.images.one.cta.name }}</a>
+						<a href="{{ page.extra.paralax.images.one.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.one.cta.pulse }} {{ config.extra.materialize.colorscheme.background.one  }} lighten-1">{{ page.extra.paralax.images.one.cta.name }}</a>
 					</div>
 					{% endif %}
 					<br>
@@ -88,11 +88,11 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center {{ config.extra.materialize.colorscheme.font.two }}-text"><i class="material-icons">{{ page.extra.paralax.features.one.icon }}</i></h2>
-							{% if page.extra.paralax.one.title %}
+							{% if page.extra.paralax.features.one.title %}
 								<h5 class="center">{{ page.extra.paralax.features.one.title }}</h5>
 							{% endif %}
-							{% if page.extra.paralax.one.text %}
-								<p class="light">{{ page.extra.paralax.features.one.text }}</p>
+							{% if page.extra.paralax.features.one.text %}
+								<p class="light">{{ page.extra.paralax.features.one.text | safe }}</p>
 							{% endif %}
 						</div>
 					</div>
@@ -100,11 +100,11 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center {{ config.extra.materialize.colorscheme.font.two }}-text"><i class="material-icons">{{ page.extra.paralax.features.two.icon }}</i></h2>
-							{% if page.extra.paralax.two.title %}
+							{% if page.extra.paralax.features.two.title %}
 								<h5 class="center">{{ page.extra.paralax.features.two.title }}</h5>
 							{% endif %}
-							{% if page.extra.paralax.two.text %}
-								<p class="light">{{ page.extra.paralax.features.two.text }}</p>
+							{% if page.extra.paralax.features.two.text %}
+								<p class="light">{{ page.extra.paralax.features.two.text | safe }}</p>
 							{% endif %}
 						</div>
 					</div>
@@ -112,11 +112,43 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center {{ config.extra.materialize.colorscheme.font.two }}-text"><i class="material-icons">{{ page.extra.paralax.features.three.icon }}</i></h2>
-							{% if page.extra.paralax.three.title %}
+							{% if page.extra.paralax.features.three.title %}
 								<h5 class="center">{{ page.extra.paralax.features.three.title }}</h5>
 							{% endif %}
-							{% if page.extra.paralax.three.text %}
-								<p class="light">{{ page.extra.paralax.features.three.text }}</p>
+							{% if page.extra.paralax.features.three.text %}
+								<p class="light">{{ page.extra.paralax.features.three.text | safe }}</p>
+							{% endif %}
+						</div>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 m4">
+						<div class="icon-block">
+							{% if page.extra.paralax.features.one.cta %}
+								<div class="center-align">
+									<a href="{{ page.extra.paralax.features.one.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.features.one.cta.pulse }} {{ config.extra.materialize.colorscheme.background.one }} lighten-1">{{ page.extra.paralax.features.one.cta.name }}</a>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="col s12 m4">
+						<div class="icon-block">
+							{% if page.extra.paralax.features.two.cta %}
+								<div class="center-align">
+									<a  href="{{ page.extra.paralax.features.two.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.features.two.cta.pulse }} {{ config.extra.materialize.colorscheme.background.one }} lighten-1 centre-align">{{ page.extra.paralax.features.two.cta.name }}</a>
+								</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="col s12 m4">
+						<div class="icon-block">
+							{% if page.extra.paralax.features.three.cta %}
+								<div class="center-align">
+									<a href="{{ page.extra.paralax.features.three.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.features.three.cta.pulse }} {{ config.extra.materialize.colorscheme.background.one }} lighten-1">{{ page.extra.paralax.features.three.cta.name }}</a>
+								</div>
 							{% endif %}
 						</div>
 					</div>
@@ -138,7 +170,7 @@
 					</div>
 					{% if page.extra.paralax.images.two.cta %}
 					<div class="row center">
-						<a href="{{ page.extra.paralax.images.two.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.two.cta.pulse }} {{ config.extra.materialize.colorscheme.font.one }} lighten-1">{{ page.extra.paralax.images.two.cta.name }}</a>
+						<a href="{{ page.extra.paralax.images.two.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.two.cta.pulse }} {{ config.extra.materialize.colorscheme.background.one }} lighten-1">{{ page.extra.paralax.images.two.cta.name }}</a>
 					</div>
 					{% endif %}
 				</div>
@@ -176,7 +208,7 @@
 						</div>
 						{% if page.extra.paralax.images.three.cta %}
 						<div class="row center">
-							<a href="{{ page.extra.paralax.images.three.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.three.cta.pulse }} {{ config.extra.materialize.colorscheme.font.one }} lighten-1">{{ page.extra.paralax.images.three.cta.name }}</a>
+							<a href="{{ page.extra.paralax.images.three.cta.url }}" id="download-button" class="btn-large waves-effect waves-light {{ page.extra.paralax.images.three.cta.pulse }} {{ config.extra.materialize.colorscheme.background.one }} lighten-1">{{ page.extra.paralax.images.three.cta.name }}</a>
 						</div>
 						{% endif %}
 					</div>

@@ -53,3 +53,8 @@
 		{% endif %}
 	</article>
 {% endblock main %}
+{% block script %}
+{% for script in  page.extra.scripts %}
+<script type="text/javascript" src="{{ script }}"></script>
+{% endfor %}
+{% endblock script %}
