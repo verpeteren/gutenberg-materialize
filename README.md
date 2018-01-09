@@ -462,3 +462,4 @@ This is far from complete:
 - [ ] use better names instead of one, two, three in the colorscheme.
 - [X] check manifest.json, sitemap.xml, robots.txt
 - [X] update documentation (options, bash content script)
+- [ ] use get_taxonomy_url for tags and categories
