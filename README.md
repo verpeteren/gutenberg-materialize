@@ -15,6 +15,7 @@ It's design goals are:
   - [Options - general ](#options-general)
     - [Logo](#logo)
     - [Landing page](#landing-page)
+    - [sidebar](#sidebar)
     - [Copyright](#copyright)
     - [Links](#links)
     - [Color scheme](#color-scheme)
@@ -243,6 +244,17 @@ Probably obvious, but transparent logo's work best.
 [extra.materialize]
 logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
 ```
+
+#### Sidebar
+
+Activate the sidebar (left side) on a normal page.
+Please note: this option in the [paralax index page](#options-index-page) needs some layout tweaking.
+
+```toml
+[extra.materialize]
+sidebar = true
+```
+
 
 #### Landing page
 
