@@ -42,7 +42,7 @@
 				{% endif %}
 			</ul>
 			<ul class="sidebar-nav">
-				{% include "social.html" %}
+				{{ macros::social(config=config, page=page) }}
 		   </ul>
 		</div>
 	</div>

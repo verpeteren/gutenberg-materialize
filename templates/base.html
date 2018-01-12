@@ -113,8 +113,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s6" >
-						{% include "social.html" %}
-										</div>
+						{{ macros::social(config=config, page=page) }}
+					</div>
 					<div class="col s3">
 						<a class="{{ config.extra.materialize.colorscheme.font.three }}-text text-light" href="{{ get_url(path="sitemap.xml") }}">
 							Sitemap
