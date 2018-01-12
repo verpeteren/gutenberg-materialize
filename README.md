@@ -29,7 +29,7 @@ It's design goals are:
     - [Features](#features)
 - [License](license)
 - [Credits](#credits)
-- [Contributing](#Contributing)
+- [Contributing](#contributing)
 - [Todo](#todo)
 
 ## Installation
@@ -249,11 +249,14 @@ logo = {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"
 #### Sidebar
 
 Activate the sidebar (left side) on a normal page.
-Please note: this option in the [paralax index page](#options-index-page) needs some layout tweaking.
+Values can be "off", "left"
+
+> Please note: The [paralax index page](#options-index-page) template has a empty sidebar section. that is the reason why paralax has no sidebar.
+
 
 ```toml
 [extra.materialize]
-sidebar = true
+sidebar = "off"
 ```
 
 
@@ -475,8 +478,10 @@ This is far from complete:
 - [X] get basic working categories page
 - [X] use materialize selections/cards for categories, sections, tags, ...
 - [X] make layout of the sidebar pretty
+- [ ] sidebar 'right' (off, left)
 - [ ] clean up unused css stuff
 - [ ] do-da-scss-thing
+- [ ] improve responsiveness
 - [X] drop/rename `font` in the colorscheme
 - [ ] use better names instead of one, two, three in the colorscheme.
 - [X] check manifest.json, sitemap.xml, robots.txt

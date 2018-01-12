@@ -1,19 +1,45 @@
-header{
-  margin-left: 300px;
+header, main, footer {
 }
-main {
-  margin-left: 300px;
+
+article {
+	margin-left: 1.0rem;
+	margin-right: 1.0rem;
 }
-footer{
-  margin-left: 300px;
-}
+
 .logo {
-    padding: 10px;
+	padding: 10px;
+	margin: 5px;
+}
+.logo_big {
+	padding: 10px;
+	margin: 5px;
+	max-width: 256px;
+	max-height: 256px;
 }
 .icon {
-    width: 32px;
-    height: 42px;
+	width: 32px;
+	height: 42px;
 }
-.icon {
-    height: 42px;
+
+span.icon_row {
+	height: 42px;
 }
+
+header .sidebar_off, main .sidebar_off, footer .sidebar_off {
+
+}
+
+header .sidebar_left, main .sidebar_left, footer .sidebar_left {
+	padding-left:300px;
+}
+
+@media only screen and (max-width : 992px) {
+	header .sidebar_off, main .sidebar_off, footer .sidebar_off {
+        
+	}
+	header .sidebar_left, main .sidebar_left, footer .sidebar_left {
+		padding-left: 0;
+	}
+}
+
+

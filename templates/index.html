@@ -3,49 +3,45 @@
 	<link type="text/css" rel="stylesheet" href="{{ get_url(path="/css/style.css", trailing_slash=false) }}" media="screen,projection"/>
 {% endblock extra_head %}
 {% block sidebar %}
-
-	<div id="sidebar" class="center-align {{ config.extra.materialize.colorscheme.background.three }}">
-		<div id="nav-mobile" class="side-nav fixed {{ config.extra.materialize.colorscheme.background.three }}" style="transform: translateX(0%);">
-			<div class="sidebar-about">
-				{% block sidebar_about %}
-				{% if config.extra.materialize.home %}
-					<a href="{{ config.extra.materialize.home }}">
-						<img class="logo" src="{{ config.extra.materialize.logo.big }}" alt="{{ config.title }}" width="256" height="256">
-						<h5>{{ config.title }}</h5>
-					</a>
-				{% else %}
-					<a href="{{ config.base_url }}">
-						<img class="logo" src="{{ config.extra.materialize.logo.big }}" alt="{{ config.title }}" width="256" height="256">
-						<h5>{{ config.title }}</h5>
-					</a>
-				{% endif %}
-				{% if config.description %}
-					<p class="lead">{{config.description}}</p>
-				{% endif %}
-				<h6></h6>{% endblock sidebar_about %}</h6>
-			</div>
-
-			<ul class="sidebar-nav">
-				{% block sidebar_nav %}
-					{% if config.extra.materialize.home %}
-						<li><a href="{{ config.extra.materialize.home.url }}">{{ config.extra.materialize.home.name }}</a></li>
-					{% endif %}
-					{% for link in config.extra.materialize.links %}
-						<li><a href="{{ link.url }}">{{ link.name }}</a></li>
-					{% endfor %}
-				{% endblock sidebar_nav %}
-				{% if config.generate_categories_pages %}
-					<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
-				{% endif %}
-				{% if config.generate_tags_pages %}
-					<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
-				{% endif %}
-			</ul>
-			<ul class="sidebar-nav">
-				{{ macros::social(config=config, page=page) }}
-		   </ul>
+	<header id="nav-mobile" class="side-nav fixed {{ config.extra.materialize.colorscheme.background.three }} sidebar_{{ config.extra.materialize.sidebar }}" style="transform: translateX(0%);">
+		<div class="center-align">
+			{% block sidebar_about %}
+			{% if config.extra.materialize.home %}
+				<a href="{{ config.extra.materialize.home }}">
+					<img class="logo_big" src="{{ config.extra.materialize.logo.big }}" alt="{{ config.title }}">
+					<h5>{{ config.title }}</h5>
+				</a>
+			{% else %}
+				<a href="{{ config.base_url }}">
+					<img class="logo_big" src="{{ config.extra.materialize.logo.big }}" alt="{{ config.title }}">
+					<h5>{{ config.title }}</h5>
+				</a>
+			{% endif %}
+			{% if config.description %}
+				<p class="lead">{{config.description}}</p>
+			{% endif %}
+			<h6></h6>{% endblock sidebar_about %}</h6>
 		</div>
-	</div>
+		<ul>
+			{% block sidebar_nav %}
+				{% if config.extra.materialize.home %}
+					<li><a href="{{ config.extra.materialize.home.url }}">{{ config.extra.materialize.home.name }}</a></li>
+				{% endif %}
+				{% for link in config.extra.materialize.links %}
+					<li><a href="{{ link.url }}">{{ link.name }}</a></li>
+				{% endfor %}
+			{% endblock sidebar_nav %}
+			{% if config.generate_categories_pages %}
+				<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
+			{% endif %}
+			{% if config.generate_tags_pages %}
+				<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
+			{% endif %}
+		</ul>
+		<ul class="center-align">
+			{{ macros::social(config=config, page=page) }}
+		</ul>
+	</header>
 {% endblock sidebar %}
 {% block main %}
 	<div class="col s12">

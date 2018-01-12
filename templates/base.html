@@ -34,123 +34,128 @@
 
 <body>
 	<div id="root">
-		{% if config.extra.materialize.sidebar %}
-			{% block sidebar%}
-			{% endblock sidebar %}
-		{% endif %}
 		<header class="{{ config.extra.materialize.colorscheme.background.three }}">
 			<nav class="nav top-nav {{ config.extra.materialize.colorscheme.background.one }}" role="navigation">
-				<!-- div class="nav top-nav container" -->
+				{% if config.extra.materialize.sidebar != "left" %}
 				<a id="logo-container" href="#" class="brand-logo">
 					<img src="{{ config.extra.materialize.logo.small }}" class="logo" alt="Logo">
 				</a>
+				{% endif %}
 				<ul class="right hide-on-med-and-down">
 					{% if config.extra.materialize.home %}
-					<li><a href="{{ config.extra.materialize.home.url }}">{{ config.extra.materialize.home.name }}</a></li>
+						<li><a href="{{ config.extra.materialize.home.url }}">{{ config.extra.materialize.home.name }}</a></li>
 					{% endif %}
 					{% for link in config.extra.materialize.links %}
-					<li><a href="{{link.url}}">{{link.name}}</a></li>
+						<li><a href="{{link.url}}">{{link.name}}</a></li>
 					{% endfor %}
 					{% if config.generate_tags_pages %}
-					<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
+						<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
 					{% endif %}
 					{% if config.generate_categories_pages %}
-					<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
+						<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
 					{% endif %}
-				</ul>
-				<ul id="nav-mobile" class="side-nav">
 					{% for link in config.extra.materialize.links %}
-					<li><a href="{{link.url}}">{{link.name}}</a></li>
+						<li><a href="{{link.url}}">{{link.name}}</a></li>
 					{% endfor %}
 					{% if config.generate_tags_pages %}
-					<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
+						<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
 					{% endif %}
 					{% if config.generate_categories_pages %}
-					<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
+						<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
 					{% endif %}
 				</ul>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<!--/div -->
 			</nav>
-	</header>
-
-	<main>
-		<div class="container">
-			<div class="row">
-				{% block main %}
-				{% endblock main %}
-			</div>
-		</div>
-	</main>
-
-	<footer class="page-footer {{ config.extra.materialize.colorscheme.background.one }}">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.bio.title }}</h5>
-					<p class="grey-text text-lighten-4">{{ config.extra.materialize.footer.bio.description }}</p>
-				</p>
-			</div>
-			<div class="col l3 s12">
-				<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.references.title }}</h5>
-					<ul>
-						{% for reference in config.extra.materialize.footer.references.list %}
-						<li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
-				<div class="col l3 s12">
-					<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.contact.title }}</h5>
-					<ul>
-						{% for reference in config.extra.materialize.footer.contact.list %}
-						<li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="footer-copyright">
+		</header>
+		{% if config.extra.materialize.sidebar == "left" %}
+			{% block sidebar%}
+			{% endblock sidebar %}
+		{% endif %}
+		<main>
 			<div class="container">
 				<div class="row">
-					<div class="col s6" >
-						{{ macros::social(config=config, page=page) }}
+					{% block main %}
+					{% endblock main %}
+				</div>
+			</div>
+		</main>
+		{% if config.extra.materialize.sidebar == "right" %}
+			{% block sidebar%}
+			{% endblock sidebar %}
+		{% endif %}
+
+		<footer class="page-footer {{ config.extra.materialize.colorscheme.background.one }}">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.bio.title }}</h5>
+						<p class="grey-text text-lighten-4">{{ config.extra.materialize.footer.bio.description }}</p>
+					</p>
+				</div>
+				<div class="col l3 s12">
+					<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.references.title }}</h5>
+						<ul>
+							{% for reference in config.extra.materialize.footer.references.list %}
+							<li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
+							{% endfor %}
+						</ul>
 					</div>
-					<div class="col s3">
-						<a class="{{ config.extra.materialize.colorscheme.font.three }}-text text-light" href="{{ get_url(path="sitemap.xml") }}">
-							Sitemap
-						</a>
-						{% if config.generate_rss %}
-							<br>
-							<a class="{{ config.extra.materialize.colorscheme.font.three }}-text text-light" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
-								RSS
-								<!--svg class="icon icon-rss" viewBox="0 0 24 28" aria-hidden="true">
-									<path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/>
-								</svg -->
-							</a>
-						{% endif %}
-					</div>
-					<div class="col s3">
-						<a class="{{ config.extra.materialize.colorscheme.font.two }}-text text-lighten-3" href="{{ get_url(path="{{ config.extra.materialize.copyright.url }}") }}">
-							{{ config.extra.materialize.copyright.name }}
-						</a>
+					<div class="col l3 s12">
+						<h5 class="{{ config.extra.materialize.colorscheme.font.three }}-text">{{ config.extra.materialize.footer.contact.title }}</h5>
+						<ul>
+							{% for reference in config.extra.materialize.footer.contact.list %}
+							<li><a class="{{ config.extra.materialize.colorscheme.font.three }}-text" href="{{ reference.url }}">{{ reference.name}}</a></li>
+							{% endfor %}
+						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col s6" >
+							{{ macros::social(config=config, page=page) }}
+						</div>
+						<div class="col s3">
+							<a class="{{ config.extra.materialize.colorscheme.font.three }}-text text-light" href="{{ get_url(path="sitemap.xml") }}">
+								Sitemap
+							</a>
+							{% if config.generate_rss %}
+								<br>
+								<a class="{{ config.extra.materialize.colorscheme.font.three }}-text text-light" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+									RSS
+									<!--svg class="icon icon-rss" viewBox="0 0 24 28" aria-hidden="true">
+										<path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/>
+									</svg -->
+								</a>
+							{% endif %}
+						</div>
+						<div class="col s3">
+							<a class="{{ config.extra.materialize.colorscheme.font.two }}-text text-lighten-3" href="{{ get_url(path="{{ config.extra.materialize.copyright.url }}") }}">
+								{{ config.extra.materialize.copyright.name }}
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-	<script type="text/javascript" src="{{ get_url(path="/js/jquery-2.1.1.min.js", trailing_slash=false) }}"></script>
-	<script type="text/javascript" src="{{ get_url(path="/js/materialize.min.js", trailing_slash=false) }}"></script>
-	<script type="text/javascript" src="{{ get_url(path="/js/init.js", trailing_slash=false) }}"></script>
-	{% if config.extra.materialize.social.ga %}
-		<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.materialize.social.ga }}"></script>
+		<script type="text/javascript" src="{{ get_url(path="/js/jquery-2.1.1.min.js", trailing_slash=false) }}"></script>
+		<script type="text/javascript" src="{{ get_url(path="/js/materialize.min.js", trailing_slash=false) }}"></script>
+		<script type="text/javascript" src="{{ get_url(path="/js/init.js", trailing_slash=false) }}"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', '{{ config.extra.materialize.social.ga }}');
+			$(".button-collapse").sideNav();
 		</script>
-	{% endif %}
-</div>
+		{% if config.extra.materialize.social.ga %}
+			<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.materialize.social.ga }}"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			  gtag('config', '{{ config.extra.materialize.social.ga }}');
+			</script>
+		{% endif %}
+	</div>
 </body>
 </html>
