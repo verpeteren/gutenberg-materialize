@@ -54,15 +54,6 @@
 					{% if config.generate_categories_pages %}
 						<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
 					{% endif %}
-					{% for link in config.extra.materialize.links %}
-						<li><a href="{{link.url}}">{{link.name}}</a></li>
-					{% endfor %}
-					{% if config.generate_tags_pages %}
-						<li><a href="{{ get_url(path="tags") }}">Tags</a></li>
-					{% endif %}
-					{% if config.generate_categories_pages %}
-						<li><a href="{{ get_url(path="categories") }}">Categories</a></li>
-					{% endif %}
 				</ul>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				<!--/div -->
