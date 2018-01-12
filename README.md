@@ -15,7 +15,7 @@ It's design goals are:
   - [Options - general ](#options-general)
     - [Logo](#logo)
     - [Landing page](#landing-page)
-    - [sidebar](#sidebar)
+    - [Sidebar](#sidebar)
     - [Copyright](#copyright)
     - [Links](#links)
     - [Color scheme](#color-scheme)
@@ -29,6 +29,7 @@ It's design goals are:
     - [Features](#features)
 - [License](license)
 - [Credits](#credits)
+- [Contributing](#Contributing)
 - [Todo](#todo)
 
 ## Installation
@@ -242,7 +243,7 @@ Probably obvious, but transparent logo's work best.
 
 ```toml
 [extra.materialize]
-logo= {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
+logo = {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
 ```
 
 #### Sidebar
@@ -455,6 +456,12 @@ MIT
 ### Credits
 
 Yes, I cheated and took a lot of ideas from [seventeencups]( https://github.com/17cupsofcoffee/seventeencups.net).
+
+## Contributing
+
+If you find something strange with this theme, feel free to improve it.
+As my layout skills and CSS are not that good, a lot of things can be improved.
+
 
 ## Todo
 
