@@ -27,6 +27,7 @@ It's design goals are:
   - [Options - index - page ](#options-index-page)
     - [Images](#images)
     - [Features](#features)
+- [What is 'rmd.py'](rmd.py)
 - [License](license)
 - [Credits](#credits)
 - [Contributing](#contributing)
@@ -452,6 +453,82 @@ title ="Reason one"
 text = "Bla Bla Bla. Bla, ... "
 ```
 
+### What is 'rmd.py'?
+
+I do not want to spend too much time on a technical blog.
+That means that I want to write te code files once, so that both the blog and the rest of the tools (ide, compiler, ..) can use it as well.
+I searched for a way to seperate the prose from the code, but I did not find any thing practical:
+- [tera include](https://tera.netlify.com/docs/templates/#include) does only work on templates
+- [gutenberg `gist`](https://www.getgutenberg.io/documentation/content/shortcodes/#gist) shortcode needs to have the files in gist, not locally.
+- [ribosome.py](http://sustrik.github.io/ribosome/documentation.html), needs to have a '.' prefix
+- [#include](https://gcc.gnu.org/onlinedocs/cpp/) would probably require a Makefile
+- [cog](https://nedbatchelder.com/code/cog/) is a bit overkill
+
+So I settled for a simple python3 script that uses a tera comment and expands it.
+
+Basically,`rmd.py` does the following:
+
+* Searches recursively for `.rmd` files in 'raw_folder'.
+  Replace/expand the `{#{ code_snippet(..) }#}` shortcodes in every `.rmd` file.
+  Write the expanded output to the corresponding `.md` file.
+
+* Delete `content_folder` recursively.
+  Copy `raw_folder` into `content_folder` recursively.
+
+Needless to say, this is a dangerous operation.
+
+When gutenberg gets such a shortcode in the future, this can retire and `{#{ code_snippet(..) }#}` can be replaced by `{{ code_snippet(..) }}`.
+
+#### Example:
+
+File: `rawcontent/blog/index.rmd`
+
+```markdown
+bla
+{#{ code_snippet(file_name="main.c", file_type="c") }#}
+yada
+```
+
+and this file:
+
+File: `rawcontent/blog/main.c`
+
+```c
+int main(const int argc, const char ** argv) {
+    return 0;
+}
+```
+
+The following command will delete and copy the `content/blog` directory with the expanded `index.md` file and 'main.c'
+
+```bash
+python3 ./themes/materialize rmd.py ./rawcontent/blog ./content/blog
+```
+
+File: `./content/blog/index.md`
+
+```markdown
+bla
+
+__**file**: [main.c](main.c)__
+
+```c
+int main(const int argc, const char ** argv) {
+	return 0;
+}
+
+```
+
+
+yada
+```
+
+That is really nice becausey you can write, test, use, your code snippets
+
+```bash
+mkdir -p tmp&&clang -o ./tmp/main main.c&&./tmp/main
+```
+
 ### License
 
 MIT
@@ -464,7 +541,6 @@ Yes, I cheated and took a lot of ideas from [seventeencups]( https://github.com/
 
 If you find something strange with this theme, feel free to improve it.
 As my layout skills and CSS are not that good, a lot of things can be improved.
-
 
 ## Todo
 
