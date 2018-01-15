@@ -20,12 +20,12 @@
 	<ul class="collection">
 		{% for tag in tags %}
 			<li class="collection-item">
-				Tag: <a class="chip {{ config.extra.materialize.colorscheme.background.two }}" href="{{ tag.permalink }}">{{ tag.name }}</a>
+				Tag: <a class="chip {{ config.extra.materialize.colorscheme.font.one }}-text {{ config.extra.materialize.colorscheme.background.two }}" href="{{ tag.permalink }}">{{ tag.name }}</a>
 				<p>
 					{{ tag.pages | length }} post{{ tag.pages | length | pluralize }}
 				</p>
 				{% for subpage in tag.pages %}
-					<a class="chip {{ config.extra.materialize.colorscheme.background.one }}" href="{{ subpage.permalink }}">{{ subpage.title }}</a>
+					<a class="chip {{ config.extra.materialize.colorscheme.font.two }}-text {{ config.extra.materialize.colorscheme.background.one }}" href="{{ subpage.permalink }}">{{ subpage.title }}</a>
 				{% endfor %}
 			</li>
 		{% endfor %}

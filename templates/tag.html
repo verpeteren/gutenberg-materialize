@@ -15,12 +15,14 @@
 {% endblock meta %}
 
 {% block main %}
-<ul class="collection">
-	{% for page in tag.pages %}
-		<li class="collection-item">
-			{{ macros::post_header(page=page, config=config) }}
-			<p>{{ page.summary | safe }}</p>
-		</li>
-	{% endfor %}
-</ul>
+	<h1>Tag: {{ tag.name }}</h1>
+	<h2 class="chip {{ config.extra.materialize.colorscheme.font.one }}-text {{ config.extra.materialize.colorscheme.background.two }}">{{ tag.name }}</h2>
+	<ul class="collection">
+		{% for page in tag.pages %}
+			<li class="collection-item">
+				{{ macros::post_header(page=page, config=config) }}
+				<p>{{ page.summary | safe }}</p>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock main %}

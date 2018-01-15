@@ -20,12 +20,12 @@
 	<ul class="collection">
 		{% for category in categories %}
 			<li class="collection-item">
-				Category: <a class="chip {{ config.extra.materialize.colorscheme.background.two }}" href="{{ category.permalink }}">{{ category.name }}</a>
+				Category: <a class="chip {{ config.extra.materialize.colorscheme.font.one}}-text {{ config.extra.materialize.colorscheme.background.two }}" href="{{ category.permalink }}">{{ category.name }}</a>
 				<p>
 					{{ category.pages | length }} post{{ category.pages | length | pluralize }}
 				</p>
 				{% for subpage in category.pages %}
-					<a class="chip" href="{{ subpage.permalink }}">{{ subpage.title }}</a>
+					<a class="chip {{ config.extra.materialize.colorscheme.font.two }}-text {{ config.extra.materialize.colorscheme.font.one}}" href="{{ subpage.permalink }}">{{ subpage.title }}</a>
 				{% endfor %}
 			</li>
 		{% endfor %}
