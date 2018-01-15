@@ -17,7 +17,7 @@ repo = "https://github.com/Dogfalo/materialize/"
 
 [extra.materialize]
 logo = {small = "http://placehold.it/32x32", big = "http://placehold.it/240x240"}
-home = {url = "/index", name = "Home"}
+home = {url = "/paralax/", name = "Home"}
 copyright = {url = "/#", name ="© 2018"}
 sidebar = "off" #"left"
 links = [
@@ -50,7 +50,7 @@ list = [
 
 [extra.materialize.social]
 
-ga = "UA-112179527-1"
+ga = "UA-123456789-1"
 
 #discuss = "verpeteren"
 
