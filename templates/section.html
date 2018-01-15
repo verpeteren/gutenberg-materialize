@@ -23,7 +23,12 @@
 				<ul class="collection">
 					{% for content_page in section.pages %}
 						<li class="collection-item">
-							<a class="title" href="{{ content_page.permalink }}">{{ content_page.title }} ({{ content_page.reading_time + 1 }} minutes read)</a>
+							<a class="title" href="{{ content_page.permalink }}">
+								{{ content_page.title }} 
+								<span class="new badge" data-badge-caption="minute{{ content_page.reading_time + 1 | pluralize }} read">
+									{{ content_page.reading_time + 1 }}
+								</span>
+							</a>
 							<p>
 								{{ content_page.summary | safe }}
 							</p>
@@ -39,21 +44,16 @@
 					{% for content_section in section.subsections %}
 						<li class="collection-item">
 							<a class="title" href="{{ content_section.permalink }}">{{ content_section.title }}
-								{% if content_section.pages or content_section.subsections %}
-									(
-								{% endif %}
 								{% if content_section.subsections %}
-									{# todo: something is not right with the counting of the subsections #}
-									{{ content_section.subsections | length  }} sections
-								{% endif %}
-								{% if content_section.pages and content_section.subsections %}
-									, 
+									<span class="new badge" data-badge-caption="section{{ content_section.subsections | length | pluralize }}">
+										{# todo: something is not right with the counting of the subsections #}
+										{{ content_section.subsections | length  }}
+									</span>
 								{% endif %}
 								{% if content_section.pages %}
-									{{ content_section.pages | length }} articles 
-								{% endif %}
-								{% if content_section.pages or content_section.subsections %}
-									)
+									<span class="new badge" data-badge-caption="article{{ content_section.pages| length | pluralize }}">
+										{{ content_section.pages | length }} 
+									</span>
 								{% endif %}
 							</a>
 						</li>
