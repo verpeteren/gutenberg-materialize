@@ -23,7 +23,7 @@
 
 {% block main %}
 	<article class="Post">
-		{{ macros::post_header(page=page) }}
+		{{ macros::post_header(page=page, config=config) }}
 		<div id="breadcrumbs">
 			<nav class="{{ config.extra.materialize.colorscheme.background.one }}">
 				<div class="nav-wrapper">

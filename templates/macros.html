@@ -1,4 +1,4 @@
-{% macro post_header(page) %}
+{% macro post_header(page, config) %}
 	<h1>
 		<a class="title" href="{{ page.permalink }}">
 			{{ page.title }} 
@@ -12,7 +12,7 @@
 		<div class="col s3">
 			{% if page.category %}
 				Category: 
-				<span class="badge">
+				<span class="chip {{ config.extra.materialize.colorscheme.background.two }} ">
 					<a class="title" href="/categories/{{ page.category }}">{{ page.category }}</a>
 				</span>
 			{% endif %}
@@ -21,7 +21,7 @@
 			{% if page.tags %}
 				Tags: 
 				{% for tag in page.tags %}
-					<span class="badge">
+					<span class="chip {{ config.extra.materialize.colorscheme.background.one }} ">
 						<a href="{{ get_url(path="tags") }}{{ tag | slugify }}">{{ tag }}</a>
 					</span>
 				{% endfor %}

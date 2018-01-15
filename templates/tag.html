@@ -18,7 +18,7 @@
 <ul class="collection">
 	{% for page in tag.pages %}
 		<li class="collection-item">
-			{{ macros::post_header(page=page) }}
+			{{ macros::post_header(page=page, config=config) }}
 			<p>{{ page.summary | safe }}</p>
 		</li>
 	{% endfor %}
