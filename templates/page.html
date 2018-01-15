@@ -24,6 +24,20 @@
 {% block main %}
 	<article class="Post">
 		{{ macros::post_header(page=page) }}
+		<div id="breadcrumbs">
+			<nav class="{{ config.extra.materialize.colorscheme.background.one }}">
+				<div class="nav-wrapper">
+					<div class="col s12">
+						{% for comp in page.components %}
+							{# improve breadcrumb links
+								<a href="{{ get_section(path=p ) }}" class="breadcrumb">{{ comp }}</a>
+							#}
+							<a class="breadcrumb">{{ comp }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</nav>
+		</div>
 
 		{{ page.content | safe }}
 

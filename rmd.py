@@ -13,6 +13,8 @@ import shutil
 import fnmatch
 from typing import Dict, Tuple
 
+#TODO file_name pattern and file_type pattern could switch place.....
+
 PATTERN = re.compile("{#{ *code_snippet *\( *file_name *= *['\"](?P<file_name>.*?)['\"]( *, *file_type *= *['\"](?P<file_type>.*?)['\"] *)* *\) *}#}", re.DOTALL)
 
 def find_snippet(text: str) -> Tuple[str, Dict[str, str]]:

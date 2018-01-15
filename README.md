@@ -563,3 +563,5 @@ This is far from complete:
 - [X] check manifest.json, sitemap.xml, robots.txt
 - [X] update documentation (options, bash content script)
 - [ ] use get_taxonomy_url for tags and categories
+- [ ] investigate why the iteration over subsections in a section template does not have a subsection list
+- [ ] improve breadcrumb links

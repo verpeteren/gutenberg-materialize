@@ -2,15 +2,64 @@
 {% block main %}
 	<h1>{{ section.title }} </h1>
 	<h2>{{ section.description }} </h2>
-	<ul class="collection">
-		{% for content_page in section.pages %}
-			<li class="collection-item">
-				<a class="title" href="{{ content_page.permalink }}">{{ content_page.title }} ({{ content_page.reading_time + 1 }} minutes read)</a>
-				<p>
-					{{ content_page.summary | safe }}
-				</p>
-			</li>
-		{% endfor %}
-	</ul>
-
+	<div id="breadcrumbs">
+		<nav class="{{ config.extra.materialize.colorscheme.background.one }}">
+			<div class="nav-wrapper">
+				<div class="col s12">
+					{% for comp in section.components %}
+						{# improve breadcrumb links
+							<a href="{{ get_section(path=p ) }}" class="breadcrumb">{{ comp }}</a>
+ 						#}
+						<a class="breadcrumb">{{ comp }}</a>
+					{% endfor %}
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="row">
+		{% if section.pages %}
+			<div class="col s6">
+				<h3>Pages</h3>
+				<ul class="collection">
+					{% for content_page in section.pages %}
+						<li class="collection-item">
+							<a class="title" href="{{ content_page.permalink }}">{{ content_page.title }} ({{ content_page.reading_time + 1 }} minutes read)</a>
+							<p>
+								{{ content_page.summary | safe }}
+							</p>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+		{% if section.subsections %}
+			<div class="col s6">
+				<h3>Sections</h3>
+				<ul class="collection">
+					{% for content_section in section.subsections %}
+						<li class="collection-item">
+							<a class="title" href="{{ content_section.permalink }}">{{ content_section.title }}
+								{% if content_section.pages or content_section.subsections %}
+									(
+								{% endif %}
+								{% if content_section.subsections %}
+									{# todo: something is not right with the counting of the subsections #}
+									{{ content_section.subsections | length  }} sections
+								{% endif %}
+								{% if content_section.pages and content_section.subsections %}
+									, 
+								{% endif %}
+								{% if content_section.pages %}
+									{{ content_section.pages | length }} articles 
+								{% endif %}
+								{% if content_section.pages or content_section.subsections %}
+									)
+								{% endif %}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	</div>
 {% endblock main %}
