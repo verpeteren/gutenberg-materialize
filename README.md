@@ -43,8 +43,12 @@ $ git submodule add https://github.com/verpeteren/gutenberg-materialize.git them
 
 ### Second, enable it in your `config.toml`:
 
+Just the `theme` is needed, but this theme is preparde to handle `tag` and `category` pages.
+
 ```toml
 theme = "materialize"
+generate_categories_pages = true
+generate_tags_pages = true
 ```
 
 ### Third, check your version:
