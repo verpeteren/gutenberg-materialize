@@ -39,7 +39,9 @@
 			</nav>
 		</div>
 
-		{{ page.content | safe }}
+		<div>
+			{{ page.content | safe }}
+		</div>
 
 		{% if page.extra.github %}
 			<p>
