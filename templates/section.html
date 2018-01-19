@@ -17,14 +17,32 @@
 		</nav>
 	</div>
 	<div class="row">
-		{% if section.pages %}
-			<div class="col s6">
+		<ul class="tabs">
+			{% set overview_active = "" %}
+			{% set sections_active = "" %}
+			{% set pages_active = "" %}
+			{# todo find some way to improve this block 
+				{% if section.summary %}
+					{% set overview_active = "active" %}
+				{% elif section.pages %}
+					{% set sections_active = "active" %}
+				{% else %}
+					{% set sections_active = "active" %}
+				{% endif %}
+			#}
+			{% set overview_active = "active" %}
+			<li class="tab col s3 {{ overview_active }}"><a href="#overview">Overview</a></li>
+			<li class="tab col s3 {{ sections_active }}"><a href="#sections">Sections</a></li>
+			<li class="tab col s3 {{ pages_active }}"><a href="#pages">Pages</a></li>
+		</ul>
+		<div id="pages" class="col s12">
+			{% if section.pages %}
 				<h3>Pages</h3>
 				<ul class="collection">
 					{% for content_page in section.pages %}
 						<li class="collection-item">
 							<a class="title" href="{{ content_page.permalink }}">
-								{{ content_page.title }} 
+								{{ macros::post_header(page=content_page, config=config) }}
 								<span class="new badge" data-badge-caption="minute{{ content_page.reading_time + 1 | pluralize }} read">
 									{{ content_page.reading_time + 1 }}
 								</span>
@@ -35,10 +53,10 @@
 						</li>
 					{% endfor %}
 				</ul>
-			</div>
-		{% endif %}
-		{% if section.subsections %}
-			<div class="col s6">
+			{% endif %}
+		</div>
+		<div id="sections" class="col s12">
+			{% if section.subsections %}
 				<h3>Sections</h3>
 				<ul class="collection">
 					{% for content_section in section.subsections %}
@@ -59,7 +77,18 @@
 						</li>
 					{% endfor %}
 				</ul>
-			</div>
-		{% endif %}
+			{% endif %}
+		</div>
+		<div id="overview" class="col s12">
+			{{ section.content | safe }}
+		</div>
 	</div>
 {% endblock main %}
+{% block script %}
+<script>
+$(document).ready(function(){
+	$('ul.tabs').tabs();
+});
+</script>
+{% endblock script %}
+
