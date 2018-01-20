@@ -18,20 +18,20 @@
 	</div>
 	<div class="row">
 		<ul class="tabs">
-			{% set overview_active = "" %}
+			{% set content_active = "" %}
 			{% set sections_active = "" %}
 			{% set pages_active = "" %}
-			{# todo find some way to improve this block 
+			{# todo find some way to improve this block
 				{% if section.summary %}
-					{% set overview_active = "active" %}
+					{% set content_active = "active" %}
 				{% elif section.pages %}
 					{% set sections_active = "active" %}
 				{% else %}
 					{% set sections_active = "active" %}
 				{% endif %}
 			#}
-			{% set overview_active = "active" %}
-			<li class="tab col s3 {{ overview_active }}"><a href="#overview">Overview</a></li>
+			{% set content_active = "active" %}
+			<li class="tab col s3 {{ content_active }}"><a href="#content">Content</a></li>
 			<li class="tab col s3 {{ sections_active }}"><a href="#sections">Sections</a></li>
 			<li class="tab col s3 {{ pages_active }}"><a href="#pages">Pages</a></li>
 		</ul>
@@ -79,7 +79,7 @@
 				</ul>
 			{% endif %}
 		</div>
-		<div id="overview" class="col s12">
+		<div id="content" class="col s12">
 			{{ section.content | safe }}
 		</div>
 	</div>

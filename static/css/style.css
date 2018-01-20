@@ -35,11 +35,14 @@ header .sidebar_left, main .sidebar_left, footer .sidebar_left {
 
 @media only screen and (max-width : 992px) {
 	header .sidebar_off, main .sidebar_off, footer .sidebar_off {
-        
 	}
 	header .sidebar_left, main .sidebar_left, footer .sidebar_left {
 		padding-left: 0;
 	}
 }
 
-
+#content li {
+    list-style-type: initial;
+    margin-left: 15px;
+    padding-left: 5px;
+}

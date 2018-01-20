@@ -34,7 +34,7 @@
 			top: 0;
 		}
 	}
-	.content {
+	#content {
 		margin: 0 auto;
 		width: 100%;
 		float: none;
@@ -193,7 +193,7 @@
 				<div class="row">
 					<div class="col s12 center">
 						<h3><i class="mdi-content-send {{ config.extra.materialize.colorscheme.font.two }}-text"></i></h3>
-						<p class="left-align light">
+						<p id="content" class="left-align light">
 							{{ page.content | safe }}
 						</p>
 					</div>
