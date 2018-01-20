@@ -27,6 +27,9 @@ It's design goals are:
   - [Options - index - page ](#options-index-page)
     - [Images](#images)
     - [Features](#features)
+  - [Options - page ](#options-page)
+    - [Discus](#discus)
+    - [Github](#github)
 - [What is 'rmd.py'](rmd.py)
 - [License](license)
 - [Credits](#credits)
@@ -220,7 +223,7 @@ list = [
 
 The `side bar` can hold a lot of social icons. Some highlights:
 
-* The activation of google analitics has never been easier.
+* The activation of google analytics (`ga`) has never been easier.
 * The most annoying one is the skype icon.
 * The most interesting one is `disqus` entry. This is also active on the `content pages`.
 
@@ -323,7 +326,37 @@ title ="Reason one"
 text = "Bla Bla Bla. Bla, ... "
 ```
 
-### What is 'rmd.py'?
+### Options - page
+
+#### Discuss
+
+It is easy to inject `discuss thread` the bottom of your pages. The discuss thread will be picked up by the permalink, slug, and the following 2 configurations:
+
+1. Assert that [`extra.materialize.social.discuss`](#social) is enabled inside your config.toml
+2. Set a `date` inside the frontmatter of your content page.
+
+```
++++
+#...
+date = "2018-01-20"
++++
+```
+
+#### Github
+
+It is easy to add a github-icon and a link to a github repository to the bottom of your pages.
+This is done by adding a `extra.github` entry inside the frontmatter of your content page.
+
+```
++++
+#...
+
+[extra]
+github = "https://github.com/verpeteren/SqlDetective"
++++
+```
+
+## What is 'rmd.py'?
 
 I do not want to spend too much time on a technical blog.
 That means that I want to write te code files once, so that both the blog and the rest of the tools (ide, compiler, ..) can use it as well.
@@ -349,7 +382,7 @@ Needless to say, this is a dangerous operation.
 
 When gutenberg gets such a shortcode in the future, this can retire and `{#{ code_snippet(..) }#}` can be replaced by `{{ code_snippet(..) }}`.
 
-#### Example:
+### Example:
 
 File: `rawcontent/blog/index.rmd`
 
@@ -399,11 +432,11 @@ That is really nice becausey you can write, test, use, your code snippets
 mkdir -p tmp&&clang -o ./tmp/main main.c&&./tmp/main
 ```
 
-### License
+## License
 
 MIT
 
-### Credits
+## Credits
 
 Yes, I cheated and took a lot of ideas from [seventeencups]( https://github.com/17cupsofcoffee/seventeencups.net).
 
@@ -439,3 +472,4 @@ This is far from complete:
 - [ ] paralax resize pops up the menu, and it stays there
 - [ ] find a way to preselect the tabs on a section based: content first, then pages, then sections
 - [ ] better/robuster code_snippet regex for rmd.py
+

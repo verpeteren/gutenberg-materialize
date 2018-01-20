@@ -53,7 +53,7 @@
 		{% endif %}
 
 		{% if page.date %}
-			{% if config.extra.hyder_discuss %}
+			{% if config.extra.materialize.social.discuss %}
 				<div id="disqus_thread"></div>
 				<script>
 				var disqus_config = function () {
@@ -62,7 +62,7 @@
 				};
 				(function() {
 					var d = document, s = d.createElement('script');
-					s.src = 'https://{{ config.extra.hyder_discuss }}.disqus.com/embed.js';
+					s.src = 'https://{{ config.extra.materialize.social.discuss }}.disqus.com/embed.js';
 					s.setAttribute('data-timestamp', + new Date());
 					(d.head || d.body).appendChild(s);
 				})();
