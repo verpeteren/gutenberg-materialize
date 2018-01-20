@@ -382,6 +382,12 @@ Needless to say, this is a dangerous operation.
 
 When gutenberg gets such a shortcode in the future, this can retire and `{#{ code_snippet(..) }#}` can be replaced by `{{ code_snippet(..) }}`.
 
+> Totaly unrelated to this theme, but a nice tool to add to your super powers is this poorman's link checker:
+
+``
+wget --spider -r -nd -nv -l 10 -o run.log http://127.0.0.1:1111/&&grep -B1 'broken link' run.log | grep http
+```
+
 ### Example:
 
 File: `rawcontent/blog/index.rmd`
