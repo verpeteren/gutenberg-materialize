@@ -1,6 +1,6 @@
 # Gutenberg-Materialize
 
-Gutenberg-Materialize is a basic theme for [Gutenberg](https://getgutenberg.io) based on [materializecss](https://materializecss.com).
+Gutenberg-Materialize is a basic theme for [Gutenberg](https://getgutenberg.io) based on [materializecss](http://materializecss.com).
 
 It's design goals are:
 
