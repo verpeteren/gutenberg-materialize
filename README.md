@@ -60,7 +60,9 @@ generate_tags_pages = true
 gutenberg --version
 ```
 
-If you are using an pre 0.2.2-next version of gutenberg you might need use the following hack to avoid issue  [Keats/tera#235](https://github.com/Keats/tera/issues/235)
+If you are using an pre 0.2.2-next version of gutenberg you might need to:
+ * replace `date = YYYY-mm-dd` with `date = "YYYY-mm-dd"` in 'generate_some_dummy_content.sh'.
+ * use the following hack to avoid issue  [Keats/tera#235](https://github.com/Keats/tera/issues/235)
 
 ```bash
 cp themes/materialize/templates/macro.html templates/macro.html
@@ -338,7 +340,7 @@ It is easy to inject `discuss thread` the bottom of your pages. The discuss thre
 ```
 +++
 #...
-date = "2018-01-20"
+date = 2018-01-20
 +++
 ```
 

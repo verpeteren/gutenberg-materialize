@@ -13,7 +13,7 @@ cat > content/paralax.md << EOF
 template="paralax.html"
 title = "paralax"
 path = "/paralax"
-date = "2018-01-02"
+date = 2018-01-02
 draft = false
 
 [extra]
@@ -72,7 +72,7 @@ cat > content/pages/project.md << EOF
 title = "Project page"
 description = "Overview of some projects"
 path = "/project"
-date = "2018-01-02"
+date = 2018-01-02
 tags=["article"]
 category="documentation"
 draft = false
@@ -105,7 +105,7 @@ cat > content/blog/hello-gutenberg.md << EOF
 +++
 # page front matter: see https://www.getgutenberg.io/documentation/content/page/
 title = "Hello, Gutenberg!"
-date = "2018-01-02"
+date = 2018-01-02
 tags = ["gutenberg"]
 category = "documentation"
 draft = false
@@ -134,7 +134,7 @@ wget -q -O content/blog/another-post/missing_file.png http://placehold.it/30x130
 cat > content/blog/another-post/index.md << EOF
 +++
 title = "Another post"
-date = "2018-01-02"
+date = 2018-01-02
 tags = ["gutenberg"]
 category = "documentation"
 aliases = ["/other-ffing-post"]
