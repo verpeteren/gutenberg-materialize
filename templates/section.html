@@ -6,9 +6,11 @@
 		<nav class="{{ config.extra.materialize.colorscheme.background.one }}">
 			<div class="nav-wrapper">
 				<div class="col s12">
+					{% set partial = "./" %}
 					{% for comp in section.components %}
-						{# improve breadcrumb links
-							<a href="{{ get_section(path=p ) }}" class="breadcrumb">{{ comp }}</a>
+						{# improve breadcrumb links 
+							{% set partial = partial + "/" + comp %}
+							<a href="{{ get_section(path=partial ) }}" class="breadcrumb">{{ comp }}</a>
  						#}
 						<a class="breadcrumb">{{ comp }}</a>
 					{% endfor %}
