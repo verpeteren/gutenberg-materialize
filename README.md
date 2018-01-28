@@ -477,7 +477,7 @@ This is far from complete:
 - [ ] investigate why the iteration over subsections in a section template does not have a subsection list
 - [ ] improve breadcrumb links
 - [X] repair the display of li bullet points (materialize hides them)
-- [ ] paralax resize pops up the menu, and it stays there
+- [X] paralax resize pops up the menu, and it stays there
 - [ ] find a way to preselect the tabs on a section based: content first, then pages, then sections
 - [ ] better/robuster code_snippet regex for rmd.py
 

@@ -3,7 +3,7 @@
 	<link type="text/css" rel="stylesheet" href="{{ get_url(path="/css/style.css", trailing_slash=false) }}" media="screen,projection"/>
 {% endblock extra_head %}
 {% block sidebar %}
-	<header id="nav-mobile" class="side-nav fixed {{ config.extra.materialize.colorscheme.background.three }} sidebar_{{ config.extra.materialize.sidebar }}" style="transform: translateX(0%);">
+	<ul class="side-nav" id="mobile-demo">
 		<div class="center-align">
 			{% block sidebar_about %}
 			{% if config.extra.materialize.home %}
@@ -41,7 +41,7 @@
 		<ul class="center-align">
 			{{ macros::social(config=config) }}
 		</ul>
-	</header>
+	</ul>
 {% endblock sidebar %}
 {% block main %}
 	<div class="col s12">
