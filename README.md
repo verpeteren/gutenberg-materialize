@@ -478,6 +478,6 @@ This is far from complete:
 - [ ] improve breadcrumb links
 - [X] repair the display of li bullet points (materialize hides them)
 - [X] paralax resize pops up the menu, and it stays there
-- [ ] find a way to preselect the tabs on a section based: content first, then pages, then sections
+- [X] find a way to preselect the tabs on a section based: content first, then pages, then sections
 - [ ] better/robuster code_snippet regex for rmd.py
 
