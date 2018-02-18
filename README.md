@@ -480,4 +480,5 @@ This is far from complete:
 - [X] paralax resize pops up the menu, and it stays there
 - [X] find a way to preselect the tabs on a section based: content first, then pages, then sections
 - [ ] better/robuster code_snippet regex for rmd.py
+- [ ] cookie popup if social.analitycs or extra.cookie warning
 
